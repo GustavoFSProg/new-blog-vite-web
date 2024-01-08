@@ -24,13 +24,14 @@ const Container = styled.div`
 
 const Blogger = styled.div`
   display: flex;
-  width: 60vw;
+  width: 82%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  /* background: green; */
 
   @media screen and (max-width: 850px) {
-    width: 100vw;
+    width: 80%;
   }
 `
 
@@ -38,9 +39,12 @@ const Span = styled.div`
   display: flex;
   font-size: 28px;
   letter-spacing: 10px;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 850px) {
     font-size: 20px;
+    margin-left: -25px;
   }
 `
 
@@ -56,15 +60,7 @@ export default function Navbar() {
       <Botao>
         <Drawer />
       </Botao>
-      <Blogger
-        style={{
-          display: 'flex',
-          width: '60vw',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-        }}
-      >
+      <Blogger>
         <Span>BLOGGER</Span>
         <span
           style={{
