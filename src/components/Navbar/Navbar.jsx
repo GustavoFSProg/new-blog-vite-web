@@ -16,22 +16,56 @@ const Container = styled.div`
   padding-top: 15px;
   padding-bottom: 25px;
   color: white;
+
+  @media screen and (max-width: 850px) {
+    width: 100vw;
+  }
+`
+
+const Blogger = styled.div`
+  display: flex;
+  width: 60vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media screen and (max-width: 850px) {
+    width: 100vw;
+  }
+`
+
+const Span = styled.div`
+  display: flex;
+  font-size: 28px;
+  letter-spacing: 10px;
+
+  @media screen and (max-width: 850px) {
+    font-size: 20px;
+  }
+`
+
+const Botao = styled.span`
+  @media screen and (max-width: 850px) {
+    margin-left: -25px;
+  }
 `
 
 export default function Navbar() {
   return (
     <Container>
-      <Drawer />
-      <div
+      <Botao>
+        <Drawer />
+      </Botao>
+      <Blogger
         style={{
           display: 'flex',
-          width: '80vw',
+          width: '60vw',
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
         }}
       >
-        <span style={{ fontSize: '28px', letterSpacing: '10px' }}>BLOGGER</span>
+        <Span>BLOGGER</Span>
         <span
           style={{
             fontSize: '14px',
@@ -43,7 +77,7 @@ export default function Navbar() {
         </span>
         {/* <span style={{ fontSize: '20px' }}>BLOGGER</span>
         <span style={{ fontSize: '16spanx', fontStyle: 'italic' }}>Design</span> */}
-      </div>
+      </Blogger>
     </Container>
   )
 }
