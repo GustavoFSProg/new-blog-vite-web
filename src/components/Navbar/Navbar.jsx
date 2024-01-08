@@ -32,6 +32,7 @@ const Blogger = styled.div`
 
   @media screen and (max-width: 850px) {
     width: 80%;
+    margin-left: -20px;
   }
 `
 
@@ -44,7 +45,6 @@ const Span = styled.div`
 
   @media screen and (max-width: 850px) {
     font-size: 20px;
-    margin-left: -25px;
   }
 `
 
