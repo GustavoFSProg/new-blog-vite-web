@@ -30,7 +30,7 @@ const Blogger = styled.div`
 
   @media screen and (max-width: 850px) {
     width: 80%;
-    margin-left: -35px;
+    margin-left: -135px;
   }
 `
 
