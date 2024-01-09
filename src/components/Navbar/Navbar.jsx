@@ -30,7 +30,7 @@ const Blogger = styled.div`
 
   @media screen and (max-width: 850px) {
     width: 80%;
-    margin-left: -25px;
+    margin-left: -35px;
   }
 `
 
@@ -68,7 +68,7 @@ const Botao = styled.span`
   /* width: 100vw; */
   /* height: auto; */
   @media screen and (max-width: 850px) {
-    margin-right: 20px;
+    margin-right: 30px;
   }
 `
 
