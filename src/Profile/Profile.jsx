@@ -17,7 +17,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95vw;
+  width: 100vw;
   height: auto;
   flex-direction: column;
   font-size: 24px;
@@ -297,8 +297,8 @@ export default function Profile() {
 
   return (
     <div>
-      <Navbar />
       <Container>
+        <Navbar />
         <br />
         {buttonopen === true ? (
           <div
