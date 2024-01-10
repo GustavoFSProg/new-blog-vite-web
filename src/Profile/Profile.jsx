@@ -23,7 +23,7 @@ const Container = styled.div`
   font-size: 24px;
 
   @media screen and (max-width: 820px) {
-    background: green;
+    /* background: green; */
     /* width: 28vw; */
   }
 `
