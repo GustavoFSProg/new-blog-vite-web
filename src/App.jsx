@@ -112,7 +112,6 @@ export default function App() {
 
   return (
     <div>
-      {/* className={`${mainFontFamily.className}`} */}
       <Navbar />
       <Container>
         <br />
@@ -121,20 +120,11 @@ export default function App() {
           {posts.map((items) => {
             return (
               <ContainerPosts key="" onClick={() => setPostId(items.id)}>
-                {/* <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                > */}
                 <p>
                   <span style={{ fontSize: '25px' }}>{items.title}</span>
                 </p>
                 <img src={items.image} width="300" height="200" alt="imagem" />
                 <p> {items.description}</p>
-                {/* </div> */}
               </ContainerPosts>
             )
           })}

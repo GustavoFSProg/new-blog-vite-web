@@ -47,15 +47,30 @@ const Button = styled.button`
   }
 `
 
-const Form = styled.form`
+const LikesContainer = styled.div`
+  width: 310px;
+  height: 100px;
+  font-size: 18px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: gray;
-  flex-direction: column;
-  font-size: 24px;
+`
+
+const ContainerTexto = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-indent: 30px;
+  margin-top: 27px;
+  line-height: 25px;
+  font-size: 16px;
+
+  width: 36rem;
+
+  @media screen and (max-width: 800px) {
+    width: 22rem;
+    padding-left: 32px;
+    padding-right: 30px;
+  }
 `
 
 const useStyles = makeStyles({
@@ -97,11 +112,7 @@ export default function Profile() {
   function CardButton(id) {
     sessionStorage.setItem('POST_ID', id)
     return setButtonOpen(true)
-    // return <SimpleCard />
-    // return alert("Olá")
   }
-
-  //   const navigate = useRouter();
 
   function getDateWithoutTime(date) {
     return moment(date).format('DD-MM-YYYY')
@@ -111,8 +122,6 @@ export default function Profile() {
     try {
       const id = sessionStorage.getItem('POST-ID')
       const { data } = await api.get(`/get-one-post/${id}`)
-
-      console.log(data)
 
       setPosts(data)
     } catch (error) {
@@ -124,10 +133,7 @@ export default function Profile() {
     try {
       await api.put(`/update-likes/${id}`)
 
-      //  return navigate.push("/Profile");
       location.reload()
-
-      // navigate.push('/Profile')
     } catch (error) {
       return alert(error)
     }
@@ -138,7 +144,6 @@ export default function Profile() {
     const bull = <span className={classes.bullet}>•</span>
 
     const Id = sessionStorage.getItem('POST-ID')
-    // console.log(`ID: ${id}`)
 
     return (
       <Carder
@@ -198,17 +203,16 @@ export default function Profile() {
               width: '100%',
               alignItems: 'center',
               justifyContent: 'center',
-              // marginTop: '600px'
             }}
           >
             <SimpleCard />
           </div>
-        ) : // console.log('Fechado')
-        null}
+        ) : null}
 
         <div
           style={{
             display: 'flex',
+            width: '100vw',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
@@ -217,17 +221,7 @@ export default function Profile() {
         >
           <p>{posts.title}</p>
           <img src={posts.image} width="310" height="200" alt="imagem" />
-          <p
-            style={{
-              width: '510px',
-              textIndent: '30px',
-              marginTop: '27px',
-              lineHeight: '25px',
-              fontSize: '16px',
-            }}
-          >
-            {posts.texto}
-          </p>
+          <ContainerTexto>{posts.texto}</ContainerTexto>
           <div
             style={{
               display: 'flex',
@@ -236,15 +230,8 @@ export default function Profile() {
               width: '35rem',
             }}
           >
-            <div
-              style={{
-                width: '310px',
-                height: '100px',
-                fontSize: '18px',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
+            <LikesContainer>
+              {/* <div> */}
               {/* <button style={{marginRight: '10px'}} onClick={() => handleLikes(posts.id)}> */}
               <AiTwotoneLike
                 style={{ marginLeft: '50px', color: 'blue' }}
@@ -255,7 +242,7 @@ export default function Profile() {
               <div style={{ display: 'flex', marginLeft: '5px', marginTop: '4px' }}>
                 {posts.likes}
               </div>
-            </div>
+            </LikesContainer>
 
             <p style={{ fontSize: '16px', width: '15rem' }}>Views: {posts.views}</p>
           </div>
@@ -270,7 +257,7 @@ export default function Profile() {
           >
             <p
               style={{
-                width: '510px',
+                width: '20rem',
                 textIndent: '50px',
                 marginTop: '27px',
                 lineHeight: '25px',

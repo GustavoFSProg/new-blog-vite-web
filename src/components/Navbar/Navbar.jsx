@@ -13,6 +13,7 @@ const Container = styled.div`
   padding-top: 15px;
   padding-bottom: 25px;
   color: white;
+  /* position: fixed top; */
 
   @media screen and (max-width: 850px) {
     width: 92vw;
