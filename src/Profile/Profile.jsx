@@ -58,7 +58,7 @@ const Button = styled.button`
   width: 350px;
   height: 45px;
   background: #fff0b3;
-  flex-direction: column;
+  /* flex-direction: column; */
   font-size: 14px;
   color: black;
   padding-top: 10px;
@@ -72,6 +72,19 @@ const Button = styled.button`
   &:hover {
     background: green;
     color: yellow;
+  }
+
+  @media screen and (max-width: 820px) {
+    display: flex;
+    width: 98%;
+    background: green;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 14px;
+
+    height: 45px;
   }
 `
 
@@ -109,6 +122,22 @@ const LikesContainer = styled.div`
     margin-left: 0px;
 
     justify-content: center;
+  }
+`
+
+const ContainerButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+  height: auto;
+  /* margin-bottom: 110px; */
+
+  @media screen and (max-width: 820px) {
+    width: 100vw;
+    flex-direction: column;
+    margin-bottom: 24px;
   }
 `
 
@@ -316,22 +345,13 @@ export default function Profile() {
               </span>
             </AutorDateContainer>
           </DateLikesAllContainer>
+          <br />
+          <ContainerButtons>
+            <Button onClick={() => CardButton(posts.id)}>DELETAR POST</Button>
+
+            <Button>EDITAR POST</Button>
+          </ContainerButtons>
         </TotalContainer>
-        <br />
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-
-            width: '40%',
-            height: 'auto',
-            marginBottom: '110px',
-          }}
-        >
-          <Button onClick={() => CardButton(posts.id)}>DELETAR POST</Button>
-
-          <Button>EDITAR POST</Button>
-        </div>
       </Container>
     </div>
   )
