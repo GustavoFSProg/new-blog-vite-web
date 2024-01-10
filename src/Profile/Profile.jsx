@@ -27,6 +27,15 @@ const Container = styled.div`
     /* width: 28vw; */
   }
 `
+const Imagem = styled.img`
+  width: 550px;
+  height: 330px;
+
+  @media screen and (max-width: 820px) {
+    width: 335px;
+    height: 195px;
+  }
+`
 
 const TotalContainer = styled.div`
   display: flex;
@@ -322,7 +331,7 @@ export default function Profile() {
         <TotalContainer>
           <p>{posts.title}</p>
 
-          <img src={posts.image} width="310" height="200" alt="imagem" />
+          <Imagem src={posts.image} alt="imagem" />
           <ContainerTexto>{posts.texto}</ContainerTexto>
           <DateLikesAllContainer>
             <LikesContainer>
