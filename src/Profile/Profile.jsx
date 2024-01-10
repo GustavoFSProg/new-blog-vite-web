@@ -17,7 +17,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 95vw;
   height: auto;
   flex-direction: column;
   font-size: 24px;
