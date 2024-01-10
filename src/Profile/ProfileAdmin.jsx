@@ -352,11 +352,11 @@ export default function Profile() {
             </AutorDateContainer>
           </DateLikesAllContainer>
           <br />
-          {/* <ContainerButtons>
+          <ContainerButtons>
             <Button onClick={() => CardButton(posts.id)}>DELETAR POST</Button>
 
             <Button>EDITAR POST</Button>
-          </ContainerButtons> */}
+          </ContainerButtons>
         </TotalContainer>
       </Container>
     </div>
