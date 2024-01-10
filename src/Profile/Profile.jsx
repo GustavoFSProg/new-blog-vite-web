@@ -23,6 +23,20 @@ const Container = styled.div`
   font-size: 24px;
 `
 
+const TotalContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  flex-direction: column;
+  cursor: pointer;
+
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+  }
+`
+
 const Button = styled.button`
   display: flex;
   justify-content: center;
@@ -44,6 +58,23 @@ const Button = styled.button`
   &:hover {
     background: green;
     color: yellow;
+  }
+`
+
+const DateLikesAllContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: auto;
+  flex-direction: row;
+
+  background: green;
+
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -71,6 +102,14 @@ const ContainerTexto = styled.div`
     padding-left: 32px;
     padding-right: 30px;
   }
+`
+
+const ViewsContainer = styled.div`
+  width: 15rem;
+  height: 100px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
 `
 
 const useStyles = makeStyles({
@@ -209,69 +248,56 @@ export default function Profile() {
           </div>
         ) : null}
 
-        <div
-          style={{
-            display: 'flex',
-            width: '100vw',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-          }}
-        >
+        <TotalContainer>
           <p>{posts.title}</p>
           <img src={posts.image} width="310" height="200" alt="imagem" />
           <ContainerTexto>{posts.texto}</ContainerTexto>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '35rem',
-            }}
-          >
+          <DateLikesAllContainer>
             <LikesContainer>
-              {/* <div> */}
-              {/* <button style={{marginRight: '10px'}} onClick={() => handleLikes(posts.id)}> */}
               <AiTwotoneLike
                 style={{ marginLeft: '50px', color: 'blue' }}
                 onClick={() => handleLikes(posts.id)}
                 fontSize="26px"
               />
-              {/* </button> */}
               <div style={{ display: 'flex', marginLeft: '5px', marginTop: '4px' }}>
                 {posts.likes}
               </div>
             </LikesContainer>
 
-            <p style={{ fontSize: '16px', width: '15rem' }}>Views: {posts.views}</p>
-          </div>
+            <ViewsContainer>Views: {posts.views}</ViewsContainer>
 
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '35rem',
-            }}
-          >
-            <p
+            <div
               style={{
-                width: '20rem',
-                textIndent: '50px',
-                marginTop: '27px',
-                lineHeight: '25px',
-                fontSize: '16px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '35rem',
               }}
             >
-              Autor: {posts.autor}
-            </p>
+              <span
+                style={{
+                  // width: '15rem',
+                  textIndent: '50px',
+                  lineHeight: '25px',
+                  fontSize: '16px',
+                }}
+              >
+                Autor: {posts.autor}
+              </span>
 
-            <p style={{ fontSize: '16px', width: '15rem' }}>
-              Data: {getDateWithoutTime(posts.createdAt)}
-            </p>
-          </div>
-        </div>
+              <span
+                style={{
+                  fontSize: '16px',
+                  marginTop: '4px',
+                  marginLeft: '37px',
+                }}
+              >
+                {getDateWithoutTime(posts.createdAt)}
+              </span>
+            </div>
+          </DateLikesAllContainer>
+        </TotalContainer>
         <br />
         <div
           style={{
