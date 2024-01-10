@@ -57,10 +57,10 @@ const Button = styled.button`
   align-items: center;
   width: 350px;
   height: 45px;
-  background: #fff0b3;
+  background: #394d3e;
   /* flex-direction: column; */
   font-size: 14px;
-  color: black;
+  color: white;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
@@ -70,14 +70,13 @@ const Button = styled.button`
   transition: all ease 0.8s;
 
   &:hover {
-    background: green;
+    background: #31633e;
     color: yellow;
   }
 
   @media screen and (max-width: 820px) {
     display: flex;
     width: 98%;
-    background: green;
     justify-content: center;
     align-items: center;
     margin-right: 10px;
