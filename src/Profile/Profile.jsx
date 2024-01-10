@@ -37,6 +37,20 @@ const TotalContainer = styled.div`
   }
 `
 
+const AutorDateContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35rem;
+
+  @media screen and (max-width: 820px) {
+    margin-left: -50px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+  }
+`
+
 const Button = styled.button`
   display: flex;
   justify-content: center;
@@ -68,13 +82,18 @@ const DateLikesAllContainer = styled.div`
   width: 50%;
   height: auto;
   flex-direction: row;
+  margin-top: 20px;
 
-  background: green;
+  /* background: #333333; */
+  background: #2a2b2a;
 
   @media screen and (max-width: 820px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    padding-bottom: 20px;
   }
 `
 
@@ -84,6 +103,13 @@ const LikesContainer = styled.div`
   font-size: 18px;
   display: flex;
   align-items: center;
+  margin-left: 50px;
+
+  @media screen and (max-width: 800px) {
+    margin-left: 0px;
+
+    justify-content: center;
+  }
 `
 
 const ContainerTexto = styled.div`
@@ -110,6 +136,17 @@ const ViewsContainer = styled.div`
   font-size: 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 800px) {
+    margin-top: -52px;
+  }
+`
+
+const Autor = styled.div`
+  text-indent: 50px;
+  line-height: 25px;
+  font-size: 16px;
 `
 
 const useStyles = makeStyles({
@@ -255,7 +292,7 @@ export default function Profile() {
           <DateLikesAllContainer>
             <LikesContainer>
               <AiTwotoneLike
-                style={{ marginLeft: '50px', color: 'blue' }}
+                style={{ color: 'blue' }}
                 onClick={() => handleLikes(posts.id)}
                 fontSize="26px"
               />
@@ -266,26 +303,8 @@ export default function Profile() {
 
             <ViewsContainer>Views: {posts.views}</ViewsContainer>
 
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width: '35rem',
-              }}
-            >
-              <span
-                style={{
-                  // width: '15rem',
-                  textIndent: '50px',
-                  lineHeight: '25px',
-                  fontSize: '16px',
-                }}
-              >
-                Autor: {posts.autor}
-              </span>
-
+            <AutorDateContainer>
+              <Autor>Autor: {posts.autor}</Autor>
               <span
                 style={{
                   fontSize: '16px',
@@ -295,7 +314,7 @@ export default function Profile() {
               >
                 {getDateWithoutTime(posts.createdAt)}
               </span>
-            </div>
+            </AutorDateContainer>
           </DateLikesAllContainer>
         </TotalContainer>
         <br />
