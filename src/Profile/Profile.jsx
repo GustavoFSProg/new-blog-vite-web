@@ -21,6 +21,11 @@ const Container = styled.div`
   height: auto;
   flex-direction: column;
   font-size: 24px;
+
+  @media screen and (max-width: 820px) {
+    background: green;
+    /* width: 28vw; */
+  }
 `
 
 const TotalContainer = styled.div`
@@ -43,6 +48,7 @@ const AutorDateContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 35rem;
+  width: 100vw;
 
   @media screen and (max-width: 820px) {
     margin-left: -50px;
@@ -315,6 +321,7 @@ export default function Profile() {
 
         <TotalContainer>
           <p>{posts.title}</p>
+
           <img src={posts.image} width="310" height="200" alt="imagem" />
           <ContainerTexto>{posts.texto}</ContainerTexto>
           <DateLikesAllContainer>
