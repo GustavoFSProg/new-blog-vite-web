@@ -152,7 +152,7 @@ const ContainerTexto = styled.div`
   width: 36rem;
 
   @media screen and (max-width: 800px) {
-    width: 19rem;
+    width: 20.8rem;
     padding-left: 32px;
     padding-right: 30px;
   }
