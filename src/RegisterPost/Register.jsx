@@ -79,6 +79,8 @@ export default function RegisterPost() {
 
   async function registerPost(e) {
     e.preventDefault()
+
+    // const Token = sessionStorage.getItem('token')
     try {
       const data = new FormData()
 
