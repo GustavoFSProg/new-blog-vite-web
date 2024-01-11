@@ -336,10 +336,10 @@ export default function Profile() {
           <Imagem src={posts.image} alt="imagem" />
           <ContainerTexto>{posts.texto}</ContainerTexto>
           <DateLikesAllContainer>
-            <LikesContainer>
+            <LikesContainer onClick={() => handleLikes(posts.id)}>
               <AiTwotoneLike
                 style={{ color: 'blue' }}
-                onClick={() => handleLikes(posts.id)}
+                // onClick={() => handleLikes(posts.id)}
                 fontSize="26px"
               />
               <div style={{ display: 'flex', marginLeft: '5px', marginTop: '4px' }}>
