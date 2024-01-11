@@ -255,6 +255,8 @@ export default function Profile() {
       await api.put(`/update-likes/${id}`)
 
       location.reload()
+
+      navigate('/profile')
     } catch (error) {
       return alert(error)
     }
