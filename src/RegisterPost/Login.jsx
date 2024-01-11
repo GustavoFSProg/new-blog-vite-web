@@ -47,28 +47,27 @@ const Botao = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 31rem;
-  height: auto;
-  background: green;
-  font-size: 17px;
-  padding-top: 9px;
-  padding-left: 11px;
-  padding-bottom: 9px;
+  width: 495px;
+  height: 45px;
+  background: #394d3e;
+  font-size: 16px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px;
-  margin-bottom: -10px;
-  color: yellow;
-  transition: all ease 2.9s;
-  cursor: pointer;
+  transition: all ease 0.8s;
 
   &:hover {
-    background: yellow;
-    color: green;
+    background: #31633e;
+    color: yellow;
   }
 `
 
 export default function Login() {
-  const [email, setEmail] = useState('carlos@gmail.com')
-  const [password, setPassword] = useState('1234')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const navigate = useNavigate()
 
@@ -95,7 +94,8 @@ export default function Login() {
     <div>
       <Navbar />
       <Container>
-        {/* <h1>CADASTRO DE POST</h1> */}
+        <br />
+        <h1>LOGIN</h1>
 
         <br />
 
@@ -109,9 +109,8 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <br />
-          <br />
           <Input
-            type="text"
+            type="password"
             name="password"
             id="password"
             placeholder="SENHA:"
