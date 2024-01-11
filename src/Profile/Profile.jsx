@@ -99,6 +99,7 @@ const Button = styled.button`
     margin-right: 10px;
     margin-left: 10px;
     margin-bottom: 14px;
+    cursor: pointer;
 
     height: 45px;
   }
@@ -128,7 +129,7 @@ const DateLikesAllContainer = styled.div`
 
 const LikesContainer = styled.div`
   width: 310px;
-  height: 100px;
+  height: 200px;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -136,7 +137,6 @@ const LikesContainer = styled.div`
 
   @media screen and (max-width: 800px) {
     margin-left: 0px;
-
     justify-content: center;
   }
 `
@@ -337,11 +337,7 @@ export default function Profile() {
           <ContainerTexto>{posts.texto}</ContainerTexto>
           <DateLikesAllContainer>
             <LikesContainer onClick={() => handleLikes(posts.id)}>
-              <AiTwotoneLike
-                style={{ color: 'blue' }}
-                // onClick={() => handleLikes(posts.id)}
-                fontSize="26px"
-              />
+              <AiTwotoneLike style={{ color: 'blue' }} fontSize="30px" />
               <div style={{ display: 'flex', marginLeft: '5px', marginTop: '4px' }}>
                 {posts.likes}
               </div>
