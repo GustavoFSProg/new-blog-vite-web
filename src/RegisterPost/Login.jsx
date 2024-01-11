@@ -1,0 +1,133 @@
+'use client'
+
+import { useState } from 'react'
+import api from '../api'
+import styled from 'styled-components'
+import Navbar from '../components/Navbar/Navbar'
+import { useNavigate } from 'react-router-dom'
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  /* background: #d9d9d9; */
+  flex-direction: column;
+  font-size: 24px;
+`
+
+const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  /* background: green; */
+  flex-direction: column;
+  font-size: 24px;
+`
+
+const Input = styled.input`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: auto;
+  /* background: #d9d9d9; */
+  font-size: 17px;
+  padding-top: 9px;
+  padding-left: 11px;
+  padding-bottom: 9px;
+  border-radius: 10px;
+  margin-bottom: -10px;
+`
+
+const Botao = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 31rem;
+  height: auto;
+  background: green;
+  font-size: 17px;
+  padding-top: 9px;
+  padding-left: 11px;
+  padding-bottom: 9px;
+  border-radius: 10px;
+  margin-bottom: -10px;
+  color: yellow;
+  transition: all ease 2.9s;
+  cursor: pointer;
+
+  &:hover {
+    background: yellow;
+    color: green;
+  }
+`
+
+export default function Login() {
+  const [email, setEmail] = useState('carlos@gmail.com')
+  const [password, setPassword] = useState('1234')
+
+  const navigate = useNavigate()
+
+  async function handleLogin(e) {
+    e.preventDefault()
+
+    try {
+      const dados = { email, password }
+
+      const { data } = await api.post('/login', dados)
+
+      sessionStorage.setItem('token', data.token)
+
+      alert('LOGIN whit Sucesso!')
+
+      navigate('/')
+      return
+    } catch (error) {
+      return alert(error)
+    }
+  }
+
+  return (
+    <div>
+      <Navbar />
+      <Container>
+        {/* <h1>CADASTRO DE POST</h1> */}
+
+        <br />
+
+        <Form onSubmit={handleLogin}>
+          <Input
+            name="email"
+            placeholder="EMAIL:"
+            value={email}
+            type="email"
+            id="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <br />
+          <br />
+          <Input
+            type="text"
+            name="password"
+            id="password"
+            placeholder="SENHA:"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <br />
+          <br />
+          <Botao type="submit">LOGIN</Botao>
+        </Form>
+
+        <br />
+        <br />
+        <br />
+        <br />
+      </Container>
+    </div>
+  )
+}

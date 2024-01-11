@@ -128,6 +128,33 @@ export default function Drawer() {
             <ListItemText />
           </ListItemButton>
         </ListItem>
+
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <Link
+                to="/login"
+                style={{
+                  color: 'gray',
+                  marginTop: '-3px',
+                  textDecoration: 'none',
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <CgProfile fontSize="20px" />
+                  <span style={{ fontSize: '16px', marginLeft: '7px' }}>LOGIN</span>
+                </div>
+              </Link>
+            </ListItemIcon>
+            <ListItemText />
+          </ListItemButton>
+        </ListItem>
       </List>
       <Divider />
       {/* <List>
