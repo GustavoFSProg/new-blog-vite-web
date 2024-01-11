@@ -30,10 +30,12 @@ const Container = styled.div`
 const Imagem = styled.img`
   width: 550px;
   height: 330px;
+  margin-bottom: 5px;
 
   @media screen and (max-width: 820px) {
     width: 335px;
     height: 195px;
+    margin-bottom: 3px;
   }
 `
 
@@ -163,7 +165,7 @@ const ContainerTexto = styled.div`
   margin-top: 27px;
   line-height: 25px;
   font-size: 16px;
-
+  margin-bottom: 6px;
   width: 36rem;
 
   @media screen and (max-width: 800px) {
