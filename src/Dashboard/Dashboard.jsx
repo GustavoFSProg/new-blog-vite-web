@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import api from '../api'
 import styled from 'styled-components'
 import Navbar from '../components/Navbar/Navbar'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
 
 const Container = styled.div`
@@ -79,7 +79,7 @@ export default function Dashboard() {
       navigate('/dashboard')
     } else {
       //   navigate('/login')
-      return alert('Efetue o Login pra entrar!')
+      return user
     }
   }
 
@@ -108,7 +108,22 @@ export default function Dashboard() {
       <Container>
         <br />
 
-        {dados === 'OK' ? <h1>DASHBOARD</h1> : <h1>ACESSO PROIBIDO!</h1>}
+        {dados === 'OK' ? (
+          <h1>DASHBOARD</h1>
+        ) : (
+          <>
+            <h1>
+              ACESSO PROIBIDO!
+              <br />
+            </h1>
+            <h3>Efetue o login para Entrar</h3>
+
+            <br />
+            <Link to="/login" style={{ color: 'white', fontSize: '30px' }}>
+              LOGIN
+            </Link>
+          </>
+        )}
 
         <br />
       </Container>
