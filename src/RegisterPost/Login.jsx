@@ -93,8 +93,6 @@ export default function Login() {
   }
 
   function CheckUserLogged() {
-    console.log(`User: ${user}`)
-
     if (user === true) {
       navigate('/dashboard')
     } else {

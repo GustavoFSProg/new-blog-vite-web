@@ -100,8 +100,6 @@ export default function App() {
     try {
       const { data } = await api.get('/get-all-posts')
 
-      console.log(data)
-
       setPosts(data)
     } catch (error) {
       return alert(error)

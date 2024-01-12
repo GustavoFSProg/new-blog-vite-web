@@ -81,8 +81,6 @@ export default function Posts() {
     try {
       const { data } = await api.get('/get-all-posts')
 
-      console.log(data)
-
       setPosts(data)
     } catch (error) {
       return alert(error)

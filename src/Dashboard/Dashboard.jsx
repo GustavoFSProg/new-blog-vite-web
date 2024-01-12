@@ -87,11 +87,7 @@ export default function Dashboard() {
   async function HandleAuth() {
     const { data } = await api.post('/auth', token)
 
-    console.log(`Data: ${data.data}`)
-
     if (data) {
-      console.log(`OK`)
-
       return setDados('OK')
     }
 
