@@ -70,6 +70,19 @@ export default function DashboardMenu() {
     <Container>
       <Blogger>
         <TitleContainer>
+          {' '}
+          <Link
+            to="/dashboard"
+            style={{
+              color: '#dee0de',
+              //   marginTop: '-3px',
+              textDecoration: 'none',
+            }}
+          >
+            PAINEL
+          </Link>
+        </TitleContainer>
+        <TitleContainer>
           <Link
             to="/register"
             style={{
@@ -81,21 +94,9 @@ export default function DashboardMenu() {
             CADASTRO DE POST
           </Link>
         </TitleContainer>
-        <TitleContainer>
-          {' '}
-          <Link
-            to="/dashboard"
-            style={{
-              color: 'white',
-              //   marginTop: '-3px',
-              textDecoration: 'none',
-            }}
-          >
-            PAINEL
-          </Link>
-        </TitleContainer>
-        <TitleContainer>CADASTRO DE USUÁRIO</TitleContainer>
+
         <TitleContainer>POSTS</TitleContainer>
+        <TitleContainer>CADASTRO DE USUÁRIO</TitleContainer>
         <TitleContainer>
           <div style={{ cursor: 'pointer' }} onClick={() => LogOut()}>
             LOGOUT
