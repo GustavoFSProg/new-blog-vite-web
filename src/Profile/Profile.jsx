@@ -164,7 +164,7 @@ const ContainerTexto = styled.div`
   text-indent: 30px;
   margin-top: 27px;
   line-height: 25px;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 6px;
   width: 36rem;
 
@@ -172,6 +172,7 @@ const ContainerTexto = styled.div`
     width: 20.8rem;
     padding-left: 32px;
     padding-right: 30px;
+    font-size: 17px;
   }
 `
 
