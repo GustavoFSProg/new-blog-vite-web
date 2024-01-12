@@ -213,7 +213,7 @@ export default function ProfileAdmin() {
     try {
       await api.delete(`/delete/${id}`)
 
-      navigate('/')
+      navigate('/posts')
 
       return alert(' Post Deletado!!')
     } catch (error) {

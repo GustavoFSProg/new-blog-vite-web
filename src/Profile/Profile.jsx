@@ -255,7 +255,7 @@ export default function Profile() {
     try {
       await api.put(`/update-likes/${id}`)
 
-      location.reload()
+      // location.reload()
 
       navigate('/profile')
     } catch (error) {
@@ -362,11 +362,6 @@ export default function Profile() {
             </AutorDateContainer>
           </DateLikesAllContainer>
           <br />
-          {/* <ContainerButtons>
-            <Button onClick={() => CardButton(posts.id)}>DELETAR POST</Button>
-
-            <Button>EDITAR POST</Button>
-          </ContainerButtons> */}
         </TotalContainer>
       </Container>
     </div>
