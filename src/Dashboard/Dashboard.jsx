@@ -108,6 +108,7 @@ export default function Dashboard() {
       <Navbar />
       <Container>
         <br />
+        <h1>DASHBOARD</h1>
 
         {dados === 'OK' ? (
           <DashboardMenu />

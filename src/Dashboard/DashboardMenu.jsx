@@ -6,13 +6,13 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
+  width: 97vw;
   height: auto;
   font-size: 24px;
-  /* background: gray; */
+  background: gray;
   padding-left: 30px;
-  padding-top: 15px;
-  padding-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 15px;
   color: white;
   /* position: fixed top; */
 
@@ -23,14 +23,14 @@ const Container = styled.div`
 
 const Blogger = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: row;
-  width: 100vw;
+  width: 90vw;
   height: auto;
   font-size: 20px;
-  background: gray;
+  /* background: #959c96; */
   padding-left: 30px;
+  padding-right: 30px;
   padding-top: 15px;
   padding-bottom: 25px;
   color: white;
@@ -43,10 +43,10 @@ const Blogger = styled.div`
 
 const TitleContainer = styled.div`
   display: flex;
-  width: 82%;
+  width: 50rem;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  /* flex-direction: column; */
   /* background: green; */
   /* margin-left: -40px; */
 
@@ -56,49 +56,40 @@ const TitleContainer = styled.div`
   }
 `
 
-const Span = styled.div`
-  display: flex;
-  font-size: 28px;
-  letter-spacing: 10px;
-  justify-content: center;
-  align-items: center;
-
-  @media screen and (max-width: 850px) {
-    font-size: 20px;
-  }
-`
-
-const Botao = styled.span`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  /* width: 100vw; */
-  /* height: auto; */
-  @media screen and (max-width: 850px) {
-    margin-right: 40px;
-  }
-`
-
 export default function DashboardMenu() {
   return (
     <Container>
-      <h1>DASHBOARD</h1>
       <Blogger>
         <TitleContainer>
           <Link
             to="/register"
             style={{
               color: 'white',
-              marginTop: '-3px',
+              //   marginTop: '-3px',
               textDecoration: 'none',
             }}
           >
             CADASTRO DE POST
           </Link>
         </TitleContainer>
-        <TitleContainer>EDIÇÃO DE POST</TitleContainer>
+        <TitleContainer>
+          {' '}
+          <Link
+            to="/dashboard"
+            style={{
+              color: 'white',
+              //   marginTop: '-3px',
+              textDecoration: 'none',
+            }}
+          >
+            PAINEL
+          </Link>
+        </TitleContainer>
         <TitleContainer>CADASTRO DE USUÁRIO</TitleContainer>
         <TitleContainer>POSTS</TitleContainer>
+        <TitleContainer>
+          <div onClick={() => sessionStorage.clear()}>LOGOUT</div>
+        </TitleContainer>
       </Blogger>
     </Container>
   )

@@ -5,6 +5,7 @@ import api from '../api'
 import styled from 'styled-components'
 import Navbar from '../components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
+import DashboardMenu from '../Dashboard/DashboardMenu'
 
 const Container = styled.div`
   display: flex;
@@ -107,7 +108,7 @@ export default function RegisterPost() {
     <div>
       <Navbar />
       <Container>
-        {/* <h1>CADASTRO DE POST</h1> */}
+        <DashboardMenu />
 
         <br />
 
