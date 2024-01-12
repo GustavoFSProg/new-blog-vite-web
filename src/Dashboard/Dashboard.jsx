@@ -74,14 +74,14 @@ export default function Dashboard() {
 
   const navigate = useNavigate()
 
-  //   function CheckUserLogged() {
-  //     if (user === true) {
-  //       navigate('/dashboard')
-  //     } else {
-  //       //   navigate('/login')
-  //       return alert('Efetue o Login pra entrar!')
-  //     }
-  //   }
+  function CheckUserLogged() {
+    if (user === true) {
+      navigate('/dashboard')
+    } else {
+      //   navigate('/login')
+      return alert('Efetue o Login pra entrar!')
+    }
+  }
 
   async function HandleAuth() {
     const { data } = await api.post('/auth', token)
@@ -99,7 +99,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     HandleAuth()
-    // CheckUserLogged()
+    CheckUserLogged()
   }, [dados])
 
   return (

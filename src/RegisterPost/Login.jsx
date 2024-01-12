@@ -86,13 +86,15 @@ export default function Login() {
 
       navigate('/dashboard')
 
-      alert('LOGIN whit Sucesso!')
+      alert('Login whit Sucesso!')
     } catch (error) {
       return alert(error)
     }
   }
 
   function CheckUserLogged() {
+    console.log(`User: ${user}`)
+
     if (user === true) {
       navigate('/dashboard')
     } else {
