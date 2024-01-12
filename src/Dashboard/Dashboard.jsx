@@ -64,81 +64,52 @@ const Botao = styled.button`
   }
 `
 
-export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
+export default function Dashboard() {
   const { user, setUser } = useContext(userContext)
+  const [dados, setDados] = useState('')
+
+  const [isButtonClicked, setIsButtonClicked] = useState('none')
+
+  const token = sessionStorage.getItem('token')
 
   const navigate = useNavigate()
 
-  async function handleLogin(e) {
-    e.preventDefault()
+  //   function CheckUserLogged() {
+  //     if (user === true) {
+  //       navigate('/dashboard')
+  //     } else {
+  //       //   navigate('/login')
+  //       return alert('Efetue o Login pra entrar!')
+  //     }
+  //   }
 
-    try {
-      const dados = { email, password }
+  async function HandleAuth() {
+    const { data } = await api.post('/auth', token)
 
-      const { data } = await api.post('/login', dados)
+    console.log(`Data: ${data.data}`)
 
-      sessionStorage.setItem('token', data.token)
+    if (data) {
+      console.log(`OK`)
 
-      setUser(true)
-
-      navigate('/dashboard')
-
-      alert('LOGIN whit Sucesso!')
-    } catch (error) {
-      return alert(error)
+      return setDados('OK')
     }
-  }
 
-  function CheckUserLogged() {
-    if (user === true) {
-      navigate('/dashboard')
-    } else {
-      navigate('/login')
-    }
+    return null
   }
 
   useEffect(() => {
-    CheckUserLogged()
-  }, [])
+    HandleAuth()
+    // CheckUserLogged()
+  }, [dados])
 
   return (
     <div>
       <Navbar />
       <Container>
         <br />
-        <h1>LOGIN</h1>
 
-        <br />
+        {dados === 'OK' ? <h1>DASHBOARD</h1> : <h1>ACESSO PROIBIDO!</h1>}
 
-        <Form onSubmit={handleLogin}>
-          <Input
-            name="email"
-            placeholder="EMAIL:"
-            value={email}
-            type="email"
-            id="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <br />
-          <Input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="SENHA:"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <br />
-          <br />
-          <Botao type="submit">LOGIN</Botao>
-        </Form>
-
-        <br />
-        <br />
-        <br />
         <br />
       </Container>
     </div>
