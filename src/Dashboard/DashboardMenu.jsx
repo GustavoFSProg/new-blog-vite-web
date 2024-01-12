@@ -95,7 +95,19 @@ export default function DashboardMenu() {
           </Link>
         </TitleContainer>
 
-        <TitleContainer>POSTS</TitleContainer>
+        <TitleContainer>
+          {' '}
+          <Link
+            to="/posts"
+            style={{
+              color: 'white',
+              //   marginTop: '-3px',
+              textDecoration: 'none',
+            }}
+          >
+            POSTS
+          </Link>
+        </TitleContainer>
         <TitleContainer>CADASTRO DE USUÁRIO</TitleContainer>
         <TitleContainer>
           <div style={{ cursor: 'pointer' }} onClick={() => LogOut()}>

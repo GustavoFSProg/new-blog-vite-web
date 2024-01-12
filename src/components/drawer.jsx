@@ -77,12 +77,12 @@ export default function Drawer() {
             <ListItemText />
           </ListItemButton>
         </ListItem>
-
+        {/* 
         <ListItem>
           <ListItemButton>
             <ListItemIcon>
               <Link
-                to="/"
+                to="/register"
                 style={{
                   color: 'gray',
                   marginTop: '-3px',
@@ -103,7 +103,7 @@ export default function Drawer() {
             </ListItemIcon>
             <ListItemText />
           </ListItemButton>
-        </ListItem>
+        </ListItem> */}
 
         <ListItem>
           <ListItemButton>

@@ -12,6 +12,7 @@ import CardContent from '@material-ui/core/CardContent'
 import BButton from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { useNavigate } from 'react-router-dom'
+import DashboardMenu from '../Dashboard/DashboardMenu'
 
 const Container = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ const Container = styled.div`
   height: auto;
   flex-direction: column;
   font-size: 24px;
+  padding-bottom: 220px;
 
   @media screen and (max-width: 820px) {
     background: green;
@@ -200,7 +202,7 @@ const useStyles = makeStyles({
   },
 })
 
-export default function Profile() {
+export default function ProfileAdmin() {
   const [posts, setPosts] = useState({})
   const [buttonopen, setButtonOpen] = useState(false)
 
@@ -305,6 +307,7 @@ export default function Profile() {
     <div>
       <Container>
         <Navbar />
+        <DashboardMenu />
         <br />
         {buttonopen === true ? (
           <div
