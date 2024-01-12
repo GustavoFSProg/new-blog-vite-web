@@ -82,7 +82,7 @@ export default function Drawer() {
           <ListItemButton>
             <ListItemIcon>
               <Link
-                to="/register"
+                to="/"
                 style={{
                   color: 'gray',
                   marginTop: '-3px',

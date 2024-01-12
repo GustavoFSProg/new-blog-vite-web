@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Navbar from '../components/Navbar/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
+import DashboardMenu from './DashboardMenu'
 
 const Container = styled.div`
   display: flex;
@@ -109,7 +110,7 @@ export default function Dashboard() {
         <br />
 
         {dados === 'OK' ? (
-          <h1>DASHBOARD</h1>
+          <DashboardMenu />
         ) : (
           <>
             <h1>

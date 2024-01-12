@@ -161,7 +161,7 @@ export default function RegisterPost() {
             onChange={(e) => setAutor(e.target.value)}
           />
           <br />
-          <Botao type="submit">CADASTRAR</Botao>
+          {/* <Botao type="submit">CADASTRAR</Botao> */}
         </Form>
 
         <br />
