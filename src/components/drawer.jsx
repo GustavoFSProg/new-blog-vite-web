@@ -15,6 +15,9 @@ import { FaRegistered } from 'react-icons/fa6'
 import { IoHome } from 'react-icons/io5'
 import { CgProfile } from 'react-icons/cg'
 import { Link } from 'react-router-dom'
+import { BiLogInCircle } from 'react-icons/bi'
+import { MdOutlineSpaceDashboard } from 'react-icons/md'
+import { BsFilePostFill } from 'react-icons/bs'
 
 export default function Drawer() {
   const [state, setState] = React.useState({
@@ -120,8 +123,8 @@ export default function Drawer() {
                     justifyContent: 'center',
                   }}
                 >
-                  <CgProfile fontSize="20px" />
-                  <span style={{ fontSize: '16px', marginLeft: '7px' }}>PROFILE</span>
+                  <BsFilePostFill fontSize="20px" />
+                  <span style={{ fontSize: '16px', marginLeft: '7px' }}>POST</span>
                 </div>
               </Link>
             </ListItemIcon>
@@ -147,7 +150,7 @@ export default function Drawer() {
                     justifyContent: 'center',
                   }}
                 >
-                  <CgProfile fontSize="20px" />
+                  <BiLogInCircle fontSize="20px" />
                   <span style={{ fontSize: '16px', marginLeft: '7px' }}>LOGIN</span>
                 </div>
               </Link>
@@ -173,7 +176,7 @@ export default function Drawer() {
                     justifyContent: 'center',
                   }}
                 >
-                  <CgProfile fontSize="20px" />
+                  <MdOutlineSpaceDashboard fontSize="20px" />
                   <span style={{ fontSize: '16px', marginLeft: '7px' }}>PAINEL</span>
                 </div>
               </Link>
