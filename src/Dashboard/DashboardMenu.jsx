@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -57,6 +57,15 @@ const TitleContainer = styled.div`
 `
 
 export default function DashboardMenu() {
+  const navigate = useNavigate()
+
+  function LogOut() {
+    sessionStorage.clear()
+
+    alert('Usuário deslogado!!')
+
+    navigate('/')
+  }
   return (
     <Container>
       <Blogger>
@@ -88,7 +97,9 @@ export default function DashboardMenu() {
         <TitleContainer>CADASTRO DE USUÁRIO</TitleContainer>
         <TitleContainer>POSTS</TitleContainer>
         <TitleContainer>
-          <div onClick={() => sessionStorage.clear()}>LOGOUT</div>
+          <div style={{ cursor: 'pointer' }} onClick={() => LogOut()}>
+            LOGOUT
+          </div>
         </TitleContainer>
       </Blogger>
     </Container>
