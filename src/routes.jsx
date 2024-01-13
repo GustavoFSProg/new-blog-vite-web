@@ -7,6 +7,7 @@ import Dashboard from './Dashboard/Dashboard'
 import { UserContextProvider } from './userContext'
 import ProfileAdmin from './Profile/ProfileAdmin'
 import Posts from './Posts/Posts'
+import UpdatePost from './UpdatePost/UpdatePost'
 
 function Routers() {
   return (
@@ -20,6 +21,7 @@ function Routers() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/posts" element={<Posts />} />
+          <Route path="/update-post" element={<UpdatePost />} />
         </Routes>
       </BrowserRouter>
     </UserContextProvider>

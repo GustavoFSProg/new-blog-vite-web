@@ -30,7 +30,7 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 24px;
   padding-bottom: 220px;
-  background: white;
+  background: gray;
 
   @media screen and (max-width: 820px) {
     background: green;
@@ -210,11 +210,16 @@ const useStyles = makeStyles({
   },
 })
 
-export default function ProfileAdmin() {
+export default function UpdatePost() {
   const [posts, setPosts] = useState({})
   const [dados, setDados] = useState('AAAAA')
   const [buttonopen, setButtonOpen] = useState(false)
-  const [name, setName] = React.useState()
+  const [title, setTitle] = React.useState('')
+  const [texto, setTexto] = React.useState('')
+  const [autor, setAutor] = React.useState('')
+  const [image, setImage] = useState([])
+
+  const [description, setDescription] = React.useState('')
 
   const navigate = useNavigate()
 
@@ -226,16 +231,6 @@ export default function ProfileAdmin() {
       navigate('/posts')
 
       return alert(' Post Deletado!!')
-    } catch (error) {
-      return alert(error)
-    }
-  }
-
-  async function editarPost() {
-    try {
-      navigate('/update-post')
-
-      // return alert(' Post Deletado!!')
     } catch (error) {
       return alert(error)
     }
@@ -256,7 +251,10 @@ export default function ProfileAdmin() {
       const { data } = await api.get(`/get-one-post/${id}`)
 
       setPosts(data)
-      setName(data.title)
+      setTitle(data.title)
+      setTexto(data.texto)
+      setAutor(data.autor)
+      setDescription(data.description)
     } catch (error) {
       return alert(error)
     }
@@ -267,6 +265,32 @@ export default function ProfileAdmin() {
       await api.put(`/update-likes/${id}`)
 
       location.reload()
+    } catch (error) {
+      return alert(error)
+    }
+  }
+
+  async function updatePosts(e) {
+    e.preventDefault()
+
+    const id = sessionStorage.getItem('POST-ID')
+    try {
+      const data = new FormData()
+
+      data.append('title', title)
+      data.append('image', image)
+      data.append('description', description)
+      data.append('texto', texto)
+      data.append('autor', autor)
+      // data.append('likes', likes)
+      // data.append('views', views)
+
+      await api.put(`/update-post/${id}`, data)
+
+      alert('Sucesso!')
+
+      navigate('/')
+      return
     } catch (error) {
       return alert(error)
     }
@@ -344,18 +368,61 @@ export default function ProfileAdmin() {
         ) : null}
 
         <TotalContainer>
-          {/* {(total = posts.title)} */}
-          {/* <FormPropsTextFields data={total} /> */}
-          {/* <StateTextFields data={new String(posts.title)} /> */}
+          <form
+            style={{ display: 'flex', color: 'white', flexDirection: 'column', height: '100vh' }}
+            onSubmit={updatePosts}
+          >
+            <p>Imagem</p>
+            <input type="file" id="image" onChange={(event) => setImage(event.target.files[0])} />
+            <br />
+            <span>Título</span>
 
-          <TextField
-            id="outlined-controlled"
-            // label="Controlled"
-            value={name}
-            onChange={(event) => {
-              setName(event.target.value)
-            }}
-          />
+            <TextField
+              id="outlined-controlled"
+              // label="Controlled"
+              value={title}
+              onChange={(event) => {
+                setTitle(event.target.value)
+              }}
+            />
+            <br />
+            <span>Texto</span>
+
+            <TextField
+              id="outlined-controlled"
+              // label="Controlled"
+              value={texto}
+              onChange={(event) => {
+                setTexto(event.target.value)
+              }}
+            />
+            <br />
+            <span>Autor</span>
+
+            <TextField
+              id="outlined-controlled"
+              // label="Controlled"
+              value={autor}
+              onChange={(event) => {
+                setAutor(event.target.value)
+              }}
+            />
+            <br />
+            <span>Descrição</span>
+
+            <TextField
+              id="outlined-controlled"
+              // label="Controlled"
+              value={description}
+              onChange={(event) => {
+                setDescription(event.target.value)
+              }}
+            />
+            <br />
+            <br />
+
+            <button type="submit">EDITAR</button>
+          </form>
 
           <p>{posts.title}</p>
 
@@ -392,7 +459,7 @@ export default function ProfileAdmin() {
           <ContainerButtons>
             <Button onClick={() => CardButton(posts.id)}>DELETAR POST</Button>
 
-            <Button onClick={() => editarPost()}>EDITAR POST</Button>
+            <Button>EDITAR POST</Button>
           </ContainerButtons>
         </TotalContainer>
       </Container>

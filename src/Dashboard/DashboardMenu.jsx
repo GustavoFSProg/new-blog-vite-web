@@ -108,7 +108,18 @@ export default function DashboardMenu() {
             POSTS
           </Link>
         </TitleContainer>
-        <TitleContainer>CADASTRO DE USUÁRIO</TitleContainer>
+        <TitleContainer>
+          <Link
+            to="/update-post"
+            style={{
+              color: 'white',
+              //   marginTop: '-3px',
+              textDecoration: 'none',
+            }}
+          >
+            UPDATE POST
+          </Link>
+        </TitleContainer>
         <TitleContainer>
           <div style={{ cursor: 'pointer' }} onClick={() => LogOut()}>
             LOGOUT
