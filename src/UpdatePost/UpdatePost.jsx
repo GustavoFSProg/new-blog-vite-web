@@ -392,6 +392,9 @@ export default function UpdatePost() {
               id="outlined-controlled"
               // label="Controlled"
               value={texto}
+              multiline
+              maxRows={18}
+              style={{ width: '50rem' }}
               onChange={(event) => {
                 setTexto(event.target.value)
               }}
