@@ -1,3 +1,5 @@
+import * as React from 'react'
+
 import { useEffect, useState } from 'react'
 import api from '../api'
 import styled from 'styled-components'
@@ -13,6 +15,11 @@ import BButton from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { useNavigate } from 'react-router-dom'
 import DashboardMenu from '../Dashboard/DashboardMenu'
+import FormPropsTextFields from '../components/Input'
+import StateTextFields from '../components/InputDois'
+import TextField from '@mui/material/TextField'
+
+let total = ''
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +30,7 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 24px;
   padding-bottom: 220px;
+  background: white;
 
   @media screen and (max-width: 820px) {
     background: green;
@@ -204,7 +212,9 @@ const useStyles = makeStyles({
 
 export default function ProfileAdmin() {
   const [posts, setPosts] = useState({})
+  const [dados, setDados] = useState('AAAAA')
   const [buttonopen, setButtonOpen] = useState(false)
+  const [name, setName] = React.useState()
 
   const navigate = useNavigate()
 
@@ -236,6 +246,7 @@ export default function ProfileAdmin() {
       const { data } = await api.get(`/get-one-post/${id}`)
 
       setPosts(data)
+      setName(data.title)
     } catch (error) {
       return alert(error)
     }
@@ -323,6 +334,19 @@ export default function ProfileAdmin() {
         ) : null}
 
         <TotalContainer>
+          {/* {(total = posts.title)} */}
+          {/* <FormPropsTextFields data={total} /> */}
+          {/* <StateTextFields data={new String(posts.title)} /> */}
+
+          <TextField
+            id="outlined-controlled"
+            label="Controlled"
+            value={name}
+            onChange={(event) => {
+              setName(event.target.value)
+            }}
+          />
+
           <p>{posts.title}</p>
 
           <img src={posts.image} width="310" height="200" alt="imagem" />
