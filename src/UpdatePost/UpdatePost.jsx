@@ -369,14 +369,20 @@ export default function UpdatePost() {
 
         <TotalContainer>
           <form
-            style={{ display: 'flex', color: 'white', flexDirection: 'column', height: '100vh' }}
+            style={{
+              display: 'flex',
+              color: 'white',
+              flexDirection: 'column',
+              height: '100vh',
+            }}
             onSubmit={updatePosts}
           >
             <p>Imagem</p>
             <input type="file" id="image" onChange={(event) => setImage(event.target.files[0])} />
             <br />
-            <span>Título</span>
 
+            <img src={posts.image} width="170" height="140" alt="imagem" />
+            <span>Título</span>
             <TextField
               id="outlined-controlled"
               // label="Controlled"
@@ -387,21 +393,19 @@ export default function UpdatePost() {
             />
             <br />
             <span>Texto</span>
-
             <TextField
               id="outlined-controlled"
               // label="Controlled"
               value={texto}
               multiline
               maxRows={18}
-              style={{ width: '50rem' }}
+              style={{ width: '48rem' }}
               onChange={(event) => {
                 setTexto(event.target.value)
               }}
             />
             <br />
             <span>Autor</span>
-
             <TextField
               id="outlined-controlled"
               // label="Controlled"
@@ -412,7 +416,6 @@ export default function UpdatePost() {
             />
             <br />
             <span>Descrição</span>
-
             <TextField
               id="outlined-controlled"
               // label="Controlled"
@@ -423,15 +426,16 @@ export default function UpdatePost() {
             />
             <br />
             <br />
-
-            <button type="submit">EDITAR</button>
+            <button style={{ height: '50px' }} type="submit">
+              EDITAR
+            </button>
           </form>
 
-          <p>{posts.title}</p>
+          {/* <p>{posts.title}</p> */}
 
-          <img src={posts.image} width="310" height="200" alt="imagem" />
-          <ContainerTexto>{posts.texto}</ContainerTexto>
-          <DateLikesAllContainer>
+          {/* <img src={posts.image} width="310" height="200" alt="imagem" /> */}
+          {/* <ContainerTexto>{posts.texto}</ContainerTexto> */}
+          {/* <DateLikesAllContainer>
             <LikesContainer>
               <AiTwotoneLike
                 style={{ color: 'blue' }}
@@ -443,9 +447,9 @@ export default function UpdatePost() {
               </div>
             </LikesContainer>
 
-            <ViewsContainer>Views: {posts.views}</ViewsContainer>
+            <ViewsContainer>Views: {posts.views}</ViewsContainer> */}
 
-            <AutorDateContainer>
+          {/* <AutorDateContainer>
               <Autor>Autor: {posts.autor}</Autor>
               <span
                 style={{
@@ -457,13 +461,13 @@ export default function UpdatePost() {
                 {getDateWithoutTime(posts.createdAt)}
               </span>
             </AutorDateContainer>
-          </DateLikesAllContainer>
+          </DateLikesAllContainer> */}
           <br />
-          <ContainerButtons>
+          {/* <ContainerButtons>
             <Button onClick={() => CardButton(posts.id)}>DELETAR POST</Button>
 
             <Button>EDITAR POST</Button>
-          </ContainerButtons>
+          </ContainerButtons> */}
         </TotalContainer>
       </Container>
     </div>
