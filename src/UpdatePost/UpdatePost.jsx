@@ -30,7 +30,7 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 24px;
   padding-bottom: 220px;
-  background: gray;
+  background: #cccccc;
 
   @media screen and (max-width: 820px) {
     background: green;
@@ -71,7 +71,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 350px;
+  width: 100%;
   height: 45px;
   background: #394d3e;
   /* flex-direction: column; */
@@ -82,8 +82,8 @@ const Button = styled.button`
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
-  margin-right: 20px;
   transition: all ease 0.8s;
+  cursor: pointer;
 
   &:hover {
     background: #31633e;
@@ -101,96 +101,6 @@ const Button = styled.button`
 
     height: 45px;
   }
-`
-
-const DateLikesAllContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 50%;
-  height: auto;
-  flex-direction: row;
-  margin-top: 20px;
-
-  /* background: #333333; */
-  background: #2a2b2a;
-
-  @media screen and (max-width: 820px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    width: 100%;
-    padding-bottom: 20px;
-  }
-`
-
-const LikesContainer = styled.div`
-  width: 310px;
-  height: 100px;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  margin-left: 50px;
-
-  @media screen and (max-width: 800px) {
-    margin-left: 0px;
-
-    justify-content: center;
-  }
-`
-
-const ContainerButtons = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 50%;
-  height: auto;
-  /* margin-bottom: 110px; */
-
-  @media screen and (max-width: 820px) {
-    width: 100vw;
-    flex-direction: column;
-    margin-bottom: 24px;
-  }
-`
-
-const ContainerTexto = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-indent: 30px;
-  margin-top: 27px;
-  line-height: 25px;
-  font-size: 16px;
-
-  width: 36rem;
-
-  @media screen and (max-width: 800px) {
-    width: 20.8rem;
-    padding-left: 32px;
-    padding-right: 30px;
-  }
-`
-
-const ViewsContainer = styled.div`
-  width: 15rem;
-  height: 100px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 800px) {
-    margin-top: -52px;
-  }
-`
-
-const Autor = styled.div`
-  text-indent: 50px;
-  line-height: 25px;
-  font-size: 16px;
 `
 
 const useStyles = makeStyles({
@@ -371,9 +281,10 @@ export default function UpdatePost() {
           <form
             style={{
               display: 'flex',
-              color: 'white',
+              color: '#595959',
               flexDirection: 'column',
-              height: '100vh',
+              // alignItems: 'center',
+              height: '80%',
             }}
             onSubmit={updatePosts}
           >
@@ -382,6 +293,8 @@ export default function UpdatePost() {
             <br />
 
             <img src={posts.image} width="170" height="140" alt="imagem" />
+            <br />
+
             <span>Título</span>
             <TextField
               id="outlined-controlled"
@@ -426,48 +339,11 @@ export default function UpdatePost() {
             />
             <br />
             <br />
-            <button style={{ height: '50px' }} type="submit">
+
+            <Button style={{ height: '50px' }} type="submit">
               EDITAR
-            </button>
+            </Button>
           </form>
-
-          {/* <p>{posts.title}</p> */}
-
-          {/* <img src={posts.image} width="310" height="200" alt="imagem" /> */}
-          {/* <ContainerTexto>{posts.texto}</ContainerTexto> */}
-          {/* <DateLikesAllContainer>
-            <LikesContainer>
-              <AiTwotoneLike
-                style={{ color: 'blue' }}
-                onClick={() => handleLikes(posts.id)}
-                fontSize="26px"
-              />
-              <div style={{ display: 'flex', marginLeft: '5px', marginTop: '4px' }}>
-                {posts.likes}
-              </div>
-            </LikesContainer>
-
-            <ViewsContainer>Views: {posts.views}</ViewsContainer> */}
-
-          {/* <AutorDateContainer>
-              <Autor>Autor: {posts.autor}</Autor>
-              <span
-                style={{
-                  fontSize: '16px',
-                  marginTop: '4px',
-                  marginLeft: '37px',
-                }}
-              >
-                {getDateWithoutTime(posts.createdAt)}
-              </span>
-            </AutorDateContainer>
-          </DateLikesAllContainer> */}
-          <br />
-          {/* <ContainerButtons>
-            <Button onClick={() => CardButton(posts.id)}>DELETAR POST</Button>
-
-            <Button>EDITAR POST</Button>
-          </ContainerButtons> */}
         </TotalContainer>
       </Container>
     </div>

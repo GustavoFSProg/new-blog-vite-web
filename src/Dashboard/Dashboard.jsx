@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
 import DashboardMenu from './DashboardMenu'
+import Posts from '../Posts/Posts'
 
 const Container = styled.div`
   display: flex;
@@ -104,10 +105,13 @@ export default function Dashboard() {
       <Navbar />
       <Container>
         <br />
-        <h1>DASHBOARD</h1>
 
         {dados === 'OK' ? (
-          <DashboardMenu />
+          <>
+            {/* <DashboardMenu /> */}
+            <h1>DASHBOARD</h1>
+            <Posts />
+          </>
         ) : (
           <>
             <h1>

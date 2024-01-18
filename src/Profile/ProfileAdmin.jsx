@@ -30,7 +30,7 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 24px;
   padding-bottom: 220px;
-  background: white;
+  /* background: white; */
 
   @media screen and (max-width: 820px) {
     background: green;
@@ -348,14 +348,14 @@ export default function ProfileAdmin() {
           {/* <FormPropsTextFields data={total} /> */}
           {/* <StateTextFields data={new String(posts.title)} /> */}
 
-          <TextField
+          {/* <TextField
             id="outlined-controlled"
             // label="Controlled"
             value={name}
             onChange={(event) => {
               setName(event.target.value)
             }}
-          />
+          /> */}
 
           <p>{posts.title}</p>
 
