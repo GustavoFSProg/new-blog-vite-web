@@ -363,11 +363,12 @@ export default function ProfileAdmin() {
           <ContainerTexto>{posts.texto}</ContainerTexto>
           <DateLikesAllContainer>
             <LikesContainer>
-              <AiTwotoneLike
+              {/* <AiTwotoneLike
                 style={{ color: 'blue' }}
                 onClick={() => handleLikes(posts.id)}
                 fontSize="26px"
-              />
+              /> */}
+              Likes:
               <div style={{ display: 'flex', marginLeft: '5px', marginTop: '4px' }}>
                 {posts.likes}
               </div>
