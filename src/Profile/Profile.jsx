@@ -50,6 +50,21 @@ const TotalContainer = styled.div`
 
   @media screen and (max-width: 820px) {
     flex-direction: column;
+    padding-bottom: 60px;
+  }
+`
+
+const LikesViewsContainer = styled.div`
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  width: 70%;
+  /* height: auto; */
+  /* flex-direction: column; */
+
+  @media screen and (max-width: 820px) {
+    /* flex-direction: row; */
+    /* padding-bottom: 60px; */
   }
 `
 
@@ -109,7 +124,7 @@ const DateLikesAllContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 55%;
   height: auto;
   flex-direction: row;
   margin-top: 20px;
@@ -128,16 +143,22 @@ const DateLikesAllContainer = styled.div`
 `
 
 const LikesContainer = styled.div`
+  display: flex;
+  align-items: center;
   width: 310px;
   height: 200px;
   font-size: 18px;
-  display: flex;
-  align-items: center;
   margin-left: 50px;
 
   @media screen and (max-width: 800px) {
     margin-left: 0px;
     justify-content: center;
+    /* flex-direction: column; */
+    height: auto;
+    width: 100%;
+    /* background: green; */
+    margin-left: 0px;
+    padding-left: 50px;
   }
 `
 
@@ -185,7 +206,7 @@ const ViewsContainer = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 800px) {
-    margin-top: -52px;
+    /* margin-top: -52px; */
   }
 `
 
@@ -339,14 +360,25 @@ export default function Profile() {
           <Imagem src={posts.image} alt="imagem" />
           <ContainerTexto>{posts.texto}</ContainerTexto>
           <DateLikesAllContainer>
+            {/* <LikesViewsContainer> */}
             <LikesContainer onClick={() => handleLikes(posts.id)}>
-              <AiTwotoneLike style={{ color: 'blue' }} fontSize="30px" />
-              <div style={{ display: 'flex', marginLeft: '5px', marginTop: '4px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginLeft: '8px',
+                  // marginTop: '4px',
+                }}
+              >
+                <AiTwotoneLike style={{ color: 'blue', marginRight: '3px' }} fontSize="30px" />
                 {posts.likes}
               </div>
+              <ViewsContainer>
+                Views: <p style={{ marginLeft: '5px' }}>{posts.views}</p>
+              </ViewsContainer>
             </LikesContainer>
 
-            <ViewsContainer>Views: {posts.views}</ViewsContainer>
+            {/* </LikesViewsContainer> */}
 
             <AutorDateContainer>
               <Autor>Autor: {posts.autor}</Autor>
