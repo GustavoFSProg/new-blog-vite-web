@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import Navbar from '../components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
 import DashboardMenu from '../Dashboard/DashboardMenu'
-import Input from '../components/Input'
+import InputDinamic from '../components/InputDinamyc/InputDinamic'
+// import Input from '../components/Input'
 
 const Container = styled.div`
   display: flex;
@@ -21,8 +22,8 @@ const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: auto;
+  width: 40%;
+  /* height: 200px; */
   /* background: green; */
   flex-direction: column;
   font-size: 24px;
@@ -32,7 +33,7 @@ const Botao = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 495px;
+  width: 100%;
   height: 45px;
   background: #394d3e;
   font-size: 14px;
@@ -52,13 +53,8 @@ const Botao = styled.button`
 `
 
 export default function RegisterUser() {
-  const [image, setImage] = useState([])
-  const [title, setTitle] = useState('')
-  const [texto, setTexto] = useState('')
-  const [description, setDescription] = useState('')
-  const [autor, setAutor] = useState('')
-  const [likes, setLikes] = useState(0)
-  const [views, setViews] = useState(0)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const navigate = useNavigate()
 
@@ -67,17 +63,9 @@ export default function RegisterUser() {
 
     // const Token = sessionStorage.getItem('token')
     try {
-      const data = new FormData()
+      const data = { email, password }
 
-      data.append('title', title)
-      data.append('image', image)
-      data.append('description', description)
-      data.append('texto', texto)
-      data.append('autor', autor)
-      data.append('likes', likes)
-      data.append('views', views)
-
-      await api.post('/register', data)
+      await api.post('/register-user', data)
 
       alert('Sucesso!')
 
@@ -93,38 +81,38 @@ export default function RegisterUser() {
       <Navbar />
       <Container>
         <DashboardMenu />
+        <h1>CADASTRO DE USUARIO ADMIN</h1>
 
         <br />
 
         <Form onSubmit={registerPost}>
-          <Input
-            placeholder="Descrição"
-            invalid={true}
-            id="autor"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <br />
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+              alignItems: 'center',
+              marginBottom: '-36px',
+            }}
+          >
+            <InputDinamic
+              placeholder="Email"
+              type="email"
+              invalid={true}
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-          <br />
-          {/* <Input
-            type="text"
-            placeholder="Descrição"
-            name="description"
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          /> */}
-          <br />
-          {/* <Input
-            type="text"
-            name="autor"
-            placeholder="Autor"
-            id="autor"
-            value={autor}
-            onChange={(e) => setAutor(e.target.value)}
-          /> */}
-          <br />
+          <InputDinamic
+            placeholder="Senha"
+            type="password"
+            invalid={true}
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
           <Botao type="submit">CADASTRAR</Botao>
         </Form>
 

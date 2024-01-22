@@ -38,9 +38,8 @@ export const StyledInput = styled.input`
   outline-color: transparent;
   font-family: 'Roboto';
   font-size: 1.1rem;
- 
 
-    ::placeholder {
+  ::placeholder {
     color: transparent;
   }
   :focus + label {
@@ -65,8 +64,6 @@ export const Label = styled.label<{ move: boolean }>`
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   font-family: 'Roboto';
-
-
 `
 
 export const ErrorMessage = styled.p`
