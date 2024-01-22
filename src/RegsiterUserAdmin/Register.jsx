@@ -40,8 +40,8 @@ const Botao = styled.button`
   color: white;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
   border-radius: 10px;
   /* margin-right: 20px; */
   transition: all ease 0.8s;
@@ -53,6 +53,7 @@ const Botao = styled.button`
 `
 
 export default function RegisterUser() {
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -63,9 +64,9 @@ export default function RegisterUser() {
 
     // const Token = sessionStorage.getItem('token')
     try {
-      const data = { email, password }
+      const data = { name, email, password }
 
-      await api.post('/register-user', data)
+      await api.post('/register-admin', data)
 
       alert('Sucesso!')
 
@@ -81,7 +82,7 @@ export default function RegisterUser() {
       <Navbar />
       <Container>
         <DashboardMenu />
-        <h1>CADASTRO DE USUARIO ADMIN</h1>
+        <h2>CADASTRO DE USUARIO ADMIN</h2>
 
         <br />
 
@@ -91,7 +92,24 @@ export default function RegisterUser() {
               display: 'flex',
               width: '100%',
               alignItems: 'center',
-              marginBottom: '-36px',
+              marginBottom: '-41px',
+            }}
+          >
+            <InputDinamic
+              placeholder="Nome"
+              type="text"
+              invalid={true}
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+              alignItems: 'center',
+              marginBottom: '-41px',
             }}
           >
             <InputDinamic

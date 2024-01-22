@@ -32,7 +32,6 @@ export const StyledInput = styled.input`
   border: none;
   box-shadow: 0px 0px 5px 1px rgba(37, 0, 50, 0.25);
   border-radius: 8px;
-  padding: 0 1rem;
   border-radius: 8px;
   color: #353535;
   outline-color: transparent;

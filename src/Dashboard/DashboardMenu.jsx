@@ -27,7 +27,7 @@ const Blogger = styled.div`
   align-items: center;
   width: 90vw;
   height: auto;
-  font-size: 20px;
+  font-size: 17px;
   /* background: #959c96; */
   padding-left: 30px;
   padding-right: 30px;
