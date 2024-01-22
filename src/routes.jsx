@@ -15,7 +15,7 @@ function Routers() {
     <UserContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" exact element={<App />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile-admin" element={<ProfileAdmin />} />
           <Route path="/register" element={<RegisterPost />} />

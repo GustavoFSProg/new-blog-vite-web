@@ -108,9 +108,9 @@ export default function Dashboard() {
 
         {dados === 'OK' ? (
           <>
-            {/* <DashboardMenu /> */}
+            <DashboardMenu />
             <h1>DASHBOARD</h1>
-            <Posts />
+            {/* <Posts /> */}
           </>
         ) : (
           <>
