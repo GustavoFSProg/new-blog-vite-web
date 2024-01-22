@@ -176,11 +176,12 @@ const ContainerTexto = styled.div`
   justify-content: center;
   text-indent: 30px;
   margin-top: 27px;
-  line-height: 25px;
-  font-size: 18px;
+  line-height: 26px;
+  font-size: 17px;
   margin-bottom: 6px;
   width: 36rem;
   /* background: blue; */
+  font-family: Montserrat;
 
   @media screen and (max-width: 820px) {
     width: 102%;
@@ -349,11 +350,10 @@ export default function Profile() {
 
         <TotalContainer>
           <p
-            style={
-              {
-                // background: 'yellow',
-              }
-            }
+            style={{
+              fontFamily: 'Montserrat',
+              fontSize: '30px',
+            }}
           >
             {posts.title}
           </p>
