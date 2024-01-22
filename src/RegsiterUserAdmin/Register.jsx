@@ -76,7 +76,7 @@ const Botao = styled.button`
   border-radius: 10px;
   /* margin-right: 20px; */
   transition: all ease 0.8s;
-  margin-top: 17px;
+  margin-top: 37px;
 
   &:hover {
     background: #31633e;

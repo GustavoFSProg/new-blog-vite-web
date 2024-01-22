@@ -8,10 +8,17 @@ export const Container = styled.div`
   font-family: Inter;
   font-weight: normal;
   font-size: 1rem;
-  line-height: 160%;
+  /* line-height: 160%; */
+  /* background: orange; */
+  margin-top: 14px;
 
   @media screen and (max-width: 820px) {
     width: 82%;
+    margin-bottom: 10px;
+    height: auto;
+    padding-top: 0.2rem;
+    padding-bottom: 0rem;
+    margin-top: 15px;
   }
 `
 
@@ -23,20 +30,21 @@ export const InputContainer = styled.div`
   width: 100%;
   height: 3rem;
   border-radius: 8px;
+  /* background: yellow; */
   :hover {
     box-shadow: 0px 0px 5px 1px rgba(37, 0, 50, 0.5);
   }
-  margin-bottom: -44px;
+  /* margin-bottom: -44px; */
 
   @media screen and (max-width: 820px) {
-    margin-bottom: -48px;
+    /* margin-bottom: -48px; */
   }
 `
 
 export const StyledInput = styled.input`
   display: flex;
   height: 100%;
-  width: 100%;
+  width: 95%;
   background: #fefefe;
   border: none;
   box-shadow: 0px 0px 5px 1px rgba(37, 0, 50, 0.25);
@@ -46,6 +54,7 @@ export const StyledInput = styled.input`
   outline-color: transparent;
   font-family: 'Roboto';
   font-size: 1.1rem;
+  padding-left: 12px;
 
   ::placeholder {
     color: transparent;
@@ -56,6 +65,12 @@ export const StyledInput = styled.input`
   }
   :focus {
     box-shadow: 0px 0px 5px 1px rgba(37, 0, 50, 1);
+  }
+
+  height: 5rem;
+  @media screen and (max-width: 820px) {
+    /* margin-bottom: -48px; */
+    /* background: green; */
   }
 `
 
