@@ -105,7 +105,7 @@ export default function Posts() {
 
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <DashboardMenu />
 
       <Container>

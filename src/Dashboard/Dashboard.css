@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 98vw;
+  height: auto;
+  font-size: 24px;
+  background: gray;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  color: white;
+  overflow-x: scroll;
+}
+
+.container::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.7rem;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #5a5664;
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    padding-left: 250px;
+    padding-right: 70px;
+    font-size: 18px;
+  }
+}
