@@ -18,6 +18,18 @@ const Container = styled.div`
   font-size: 24px;
 `
 
+const FormContainerName = styled.div`
+  display: flex;
+
+  width: 100%;
+  align-items: center;
+  margin-bottom: -41px;
+
+  @media screen and (max-width: 820px) {
+    margin-left: 75px;
+  }
+`
+
 const Form = styled.form`
   display: flex;
   justify-content: center;
@@ -27,6 +39,10 @@ const Form = styled.form`
   /* background: green; */
   flex-direction: column;
   font-size: 24px;
+
+  @media screen and (max-width: 820px) {
+    width: 100vw;
+  }
 `
 
 const Botao = styled.button`
@@ -49,6 +65,10 @@ const Botao = styled.button`
   &:hover {
     background: #31633e;
     color: yellow;
+  }
+
+  @media screen and (max-width: 820px) {
+    width: 82%;
   }
 `
 
@@ -87,14 +107,7 @@ export default function RegisterUser() {
         <br />
 
         <Form onSubmit={registerPost}>
-          <div
-            style={{
-              display: 'flex',
-              width: '100%',
-              alignItems: 'center',
-              marginBottom: '-41px',
-            }}
-          >
+          <FormContainerName>
             <InputDinamic
               placeholder="Nome"
               type="text"
@@ -103,12 +116,9 @@ export default function RegisterUser() {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-          </div>
-          <div
+          </FormContainerName>
+          <FormContainerName
             style={{
-              display: 'flex',
-              width: '100%',
-              alignItems: 'center',
               marginBottom: '-41px',
             }}
           >
@@ -120,7 +130,7 @@ export default function RegisterUser() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-          </div>
+          </FormContainerName>
 
           <InputDinamic
             placeholder="Senha"

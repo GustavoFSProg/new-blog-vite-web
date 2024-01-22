@@ -25,6 +25,10 @@ const Form = styled.form`
   /* background: green; */
   flex-direction: column;
   font-size: 24px;
+
+  @media screen and (max-width: 820px) {
+    width: 100vw;
+  }
 `
 
 const Input = styled.input`
@@ -40,6 +44,10 @@ const Input = styled.input`
   padding-bottom: 9px;
   border-radius: 10px;
   margin-bottom: -10px;
+
+  @media screen and (max-width: 820px) {
+    width: 80%;
+  }
 `
 
 const Botao = styled.button`
@@ -61,6 +69,10 @@ const Botao = styled.button`
   &:hover {
     background: #31633e;
     color: yellow;
+  }
+
+  @media screen and (max-width: 820px) {
+    width: 82%;
   }
 `
 

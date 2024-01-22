@@ -9,6 +9,10 @@ export const Container = styled.div`
   font-weight: normal;
   font-size: 1rem;
   line-height: 160%;
+
+  @media screen and (max-width: 820px) {
+    width: 82%;
+  }
 `
 
 export const InputContainer = styled.div`
