@@ -21,12 +21,15 @@ const Container = styled.div`
   height: auto;
   flex-direction: column;
   font-size: 24px;
+  /* background: green; */
 
   @media screen and (max-width: 820px) {
     /* background: green; */
-    /* width: 28vw; */
+    width: 96%;
+    /* padding-right: 20px; */
   }
 `
+
 const Imagem = styled.img`
   width: 550px;
   height: 330px;
@@ -51,6 +54,7 @@ const TotalContainer = styled.div`
   @media screen and (max-width: 820px) {
     flex-direction: column;
     padding-bottom: 60px;
+    width: 83vw;
   }
 `
 
@@ -188,11 +192,12 @@ const ContainerTexto = styled.div`
   font-size: 18px;
   margin-bottom: 6px;
   width: 36rem;
+  /* background: blue; */
 
-  @media screen and (max-width: 800px) {
-    width: 20.8rem;
-    padding-left: 32px;
-    padding-right: 30px;
+  @media screen and (max-width: 820px) {
+    width: 97%;
+    /* padding-left: 30px; */
+    /* padding-right: 30px; */
     font-size: 17px;
   }
 `
@@ -337,9 +342,9 @@ export default function Profile() {
   }, [])
 
   return (
-    <div>
+    <>
+      <Navbar />
       <Container>
-        <Navbar />
         <br />
         {buttonopen === true ? (
           <div
@@ -355,19 +360,25 @@ export default function Profile() {
         ) : null}
 
         <TotalContainer>
-          <p>{posts.title}</p>
+          <p
+            style={
+              {
+                // background: 'yellow',
+              }
+            }
+          >
+            {posts.title}
+          </p>
 
           <Imagem src={posts.image} alt="imagem" />
           <ContainerTexto>{posts.texto}</ContainerTexto>
           <DateLikesAllContainer>
-            {/* <LikesViewsContainer> */}
             <LikesContainer onClick={() => handleLikes(posts.id)}>
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   marginLeft: '8px',
-                  // marginTop: '4px',
                 }}
               >
                 <AiTwotoneLike style={{ color: 'blue', marginRight: '3px' }} fontSize="30px" />
@@ -377,8 +388,6 @@ export default function Profile() {
                 Views: <p style={{ marginLeft: '5px' }}>{posts.views}</p>
               </ViewsContainer>
             </LikesContainer>
-
-            {/* </LikesViewsContainer> */}
 
             <AutorDateContainer>
               <Autor>Autor: {posts.autor}</Autor>
@@ -396,6 +405,6 @@ export default function Profile() {
           <br />
         </TotalContainer>
       </Container>
-    </div>
+    </>
   )
 }
