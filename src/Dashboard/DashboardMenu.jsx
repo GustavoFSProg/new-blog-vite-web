@@ -17,7 +17,8 @@ const Container = styled.div`
   /* position: fixed top; */
 
   @media screen and (max-width: 850px) {
-    width: 92vw;
+    /* width: 92vw; */
+    display: none;
   }
 `
 
