@@ -54,7 +54,7 @@ const TotalContainer = styled.div`
   @media screen and (max-width: 820px) {
     flex-direction: column;
     padding-bottom: 60px;
-    width: 83vw;
+    width: 82vw;
   }
 `
 
@@ -184,7 +184,7 @@ const ContainerTexto = styled.div`
 
   @media screen and (max-width: 820px) {
     width: 100%;
-    margin-left: 21px;
+    margin-left: 5px;
     /* padding-right: 20px; */
     font-size: 17px;
   }
