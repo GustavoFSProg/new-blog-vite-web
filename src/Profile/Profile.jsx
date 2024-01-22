@@ -137,12 +137,16 @@ const DateLikesAllContainer = styled.div`
   background: #2a2b2a;
 
   @media screen and (max-width: 820px) {
+    display: flex;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    width: 100%;
+    margin-left: 16px;
+    width: 110%;
     padding-bottom: 20px;
+    background: green;
   }
 `
 
@@ -166,22 +170,6 @@ const LikesContainer = styled.div`
   }
 `
 
-const ContainerButtons = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 50%;
-  height: auto;
-  /* margin-bottom: 110px; */
-
-  @media screen and (max-width: 820px) {
-    width: 100vw;
-    flex-direction: column;
-    margin-bottom: 24px;
-  }
-`
-
 const ContainerTexto = styled.div`
   display: flex;
   align-items: center;
@@ -195,9 +183,9 @@ const ContainerTexto = styled.div`
   /* background: blue; */
 
   @media screen and (max-width: 820px) {
-    width: 97%;
-    /* padding-left: 30px; */
-    /* padding-right: 30px; */
+    width: 100%;
+    margin-left: 25px;
+    /* padding-right: 20px; */
     font-size: 17px;
   }
 `
