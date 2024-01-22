@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Navbar from '../components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
 import DashboardMenu from '../Dashboard/DashboardMenu'
+import Input from '../components/Input'
 
 const Container = styled.div`
   display: flex;
@@ -25,21 +26,6 @@ const Form = styled.form`
   /* background: green; */
   flex-direction: column;
   font-size: 24px;
-`
-
-const Input = styled.input`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30rem;
-  height: auto;
-  /* background: #d9d9d9; */
-  font-size: 17px;
-  padding-top: 9px;
-  padding-left: 11px;
-  padding-bottom: 9px;
-  border-radius: 10px;
-  margin-bottom: -10px;
 `
 
 const Botao = styled.button`
@@ -65,7 +51,7 @@ const Botao = styled.button`
   }
 `
 
-export default function RegisterPost() {
+export default function RegisterUser() {
   const [image, setImage] = useState([])
   const [title, setTitle] = useState('')
   const [texto, setTexto] = useState('')
@@ -111,54 +97,33 @@ export default function RegisterPost() {
         <br />
 
         <Form onSubmit={registerPost}>
-          IMAGEM:
-          <Input type="file" id="image" onChange={(e) => setImage(e.target.files[0])} />
-          <br />
-          <br />
           <Input
-            type="text"
-            name="title"
-            id="title"
-            placeholder="Título"
+            placeholder="Descrição"
+            invalid={true}
+            id="autor"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
           <br />
-          <textarea
-            placeholder="Texto"
-            rows="22"
-            cols="58"
-            id="text"
-            value={texto}
-            style={{
-              borderRadius: '11px',
 
-              paddingTop: '12px',
-              paddingLeft: '12px',
-              paddingBottom: '9px',
-              marginBottom: '-39px',
-            }}
-            onChange={(e) => setTexto(e.target.value)}
-          />
           <br />
-          <br />
-          <Input
+          {/* <Input
             type="text"
             placeholder="Descrição"
             name="description"
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          />
+          /> */}
           <br />
-          <Input
+          {/* <Input
             type="text"
             name="autor"
             placeholder="Autor"
             id="autor"
             value={autor}
             onChange={(e) => setAutor(e.target.value)}
-          />
+          /> */}
           <br />
           <Botao type="submit">CADASTRAR</Botao>
         </Form>

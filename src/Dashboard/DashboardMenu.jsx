@@ -96,6 +96,19 @@ export default function DashboardMenu() {
         </TitleContainer>
 
         <TitleContainer>
+          <Link
+            to="/register-user"
+            style={{
+              color: 'white',
+              //   marginTop: '-3px',
+              textDecoration: 'none',
+            }}
+          >
+            CADASTRO DE USUÁRIO
+          </Link>
+        </TitleContainer>
+
+        <TitleContainer>
           {' '}
           <Link
             to="/posts"
