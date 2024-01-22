@@ -183,8 +183,8 @@ const ContainerTexto = styled.div`
   /* background: blue; */
 
   @media screen and (max-width: 820px) {
-    width: 100%;
-    margin-left: 25px;
+    width: 105%;
+    margin-left: 21px;
     /* padding-right: 20px; */
     font-size: 17px;
   }
