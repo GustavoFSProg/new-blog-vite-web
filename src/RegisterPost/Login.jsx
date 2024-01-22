@@ -35,18 +35,19 @@ const Input = styled.input`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30rem;
+  width: 27.2rem;
   height: auto;
   /* background: #d9d9d9; */
-  font-size: 17px;
-  padding-top: 9px;
+  font-size: 15px;
+  padding-top: 12px;
   padding-left: 11px;
-  padding-bottom: 9px;
+  padding-bottom: 12px;
   border-radius: 10px;
   margin-bottom: -10px;
 
   @media screen and (max-width: 820px) {
     width: 80%;
+    margin-top: -9px;
   }
 `
 
@@ -54,7 +55,7 @@ const Botao = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 495px;
+  width: 28rem;
   height: 45px;
   background: #394d3e;
   font-size: 16px;
@@ -65,6 +66,7 @@ const Botao = styled.button`
   padding-right: 10px;
   border-radius: 10px;
   transition: all ease 0.8s;
+  margin-top: -30px;
 
   &:hover {
     background: #31633e;
@@ -72,7 +74,7 @@ const Botao = styled.button`
   }
 
   @media screen and (max-width: 820px) {
-    width: 82%;
+    width: 84%;
   }
 `
 
@@ -128,7 +130,7 @@ export default function Login() {
         <Form onSubmit={handleLogin}>
           <Input
             name="email"
-            placeholder="EMAIL:"
+            placeholder="EMAIL"
             value={email}
             type="email"
             id="email"
@@ -139,7 +141,7 @@ export default function Login() {
             type="password"
             name="password"
             id="password"
-            placeholder="SENHA:"
+            placeholder="SENHA"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

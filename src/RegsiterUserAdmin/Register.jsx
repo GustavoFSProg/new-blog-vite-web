@@ -34,8 +34,8 @@ const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  /* height: 200px; */
+  width: 30vw;
+  height: auto;
   /* background: green; */
   flex-direction: column;
   font-size: 24px;
@@ -45,11 +45,26 @@ const Form = styled.form`
   }
 `
 
+// const Form = styled.form`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 40%;
+//   /* height: 200px; */
+//   /* background: green; */
+//   flex-direction: column;
+//   font-size: 24px;
+
+//   @media screen and (max-width: 820px) {
+//     width: 100vw;
+//   }
+// `
+
 const Botao = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 101%;
   height: 45px;
   background: #394d3e;
   font-size: 14px;
@@ -61,6 +76,7 @@ const Botao = styled.button`
   border-radius: 10px;
   /* margin-right: 20px; */
   transition: all ease 0.8s;
+  margin-top: 17px;
 
   &:hover {
     background: #31633e;
@@ -68,7 +84,16 @@ const Botao = styled.button`
   }
 
   @media screen and (max-width: 820px) {
-    width: 82%;
+    width: 84%;
+    /* width: 100%; */
+  }
+`
+
+const H2 = styled.h2`
+  display: flex;
+
+  @media screen and (max-width: 820px) {
+    font-size: 19px;
   }
 `
 
@@ -102,35 +127,35 @@ export default function RegisterUser() {
       <Navbar />
       <Container>
         <DashboardMenu />
-        <h2>CADASTRO DE USUARIO ADMIN</h2>
+        <H2>CADASTRO DE USUARIO ADMIN</H2>
 
         <br />
 
         <Form onSubmit={registerPost}>
-          <FormContainerName>
-            <InputDinamic
-              placeholder="Nome"
-              type="text"
-              invalid={true}
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </FormContainerName>
-          <FormContainerName
+          {/* <FormContainerName> */}
+          <InputDinamic
+            placeholder="Nome"
+            type="text"
+            invalid={true}
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          {/* </FormContainerName> */}
+          {/* <FormContainerName
             style={{
               marginBottom: '-41px',
             }}
-          >
-            <InputDinamic
-              placeholder="Email"
-              type="email"
-              invalid={true}
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </FormContainerName>
+          > */}
+          <InputDinamic
+            placeholder="Email"
+            type="email"
+            invalid={true}
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {/* </FormContainerName> */}
 
           <InputDinamic
             placeholder="Senha"

@@ -26,6 +26,11 @@ export const InputContainer = styled.div`
   :hover {
     box-shadow: 0px 0px 5px 1px rgba(37, 0, 50, 0.5);
   }
+  margin-bottom: -44px;
+
+  @media screen and (max-width: 820px) {
+    margin-bottom: -48px;
+  }
 `
 
 export const StyledInput = styled.input`
