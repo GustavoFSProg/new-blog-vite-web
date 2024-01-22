@@ -54,7 +54,7 @@ const TotalContainer = styled.div`
   @media screen and (max-width: 820px) {
     flex-direction: column;
     padding-bottom: 60px;
-    width: 80vw;
+    width: 79vw;
   }
 `
 
