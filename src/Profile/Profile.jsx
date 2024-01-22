@@ -146,7 +146,7 @@ const DateLikesAllContainer = styled.div`
     margin-left: 16px;
     width: 110%;
     padding-bottom: 20px;
-    background: green;
+    /* background: green; */
   }
 `
 
