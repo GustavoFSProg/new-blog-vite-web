@@ -25,19 +25,20 @@ const Container = styled.div`
 
   @media screen and (max-width: 820px) {
     /* background: green; */
-    width: 96%;
+    width: 97%;
     /* padding-right: 20px; */
   }
 `
 
 const Imagem = styled.img`
-  width: 550px;
-  height: 330px;
+  width: 50%;
+  height: 50%;
+  /* height: 340px; */
   margin-bottom: 5px;
-
-  @media screen and (max-width: 820px) {
-    width: 335px;
-    height: 195px;
+  /* background: yellow; */
+  @media screen and (max-width: 920px) {
+    width: 100%;
+    height: 50%;
     margin-bottom: 3px;
   }
 `
@@ -128,7 +129,7 @@ const DateLikesAllContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 55%;
+  width: 50%;
   height: auto;
   flex-direction: row;
   margin-top: 20px;
@@ -144,7 +145,7 @@ const DateLikesAllContainer = styled.div`
     align-items: center;
     margin-top: 20px;
     margin-left: 16px;
-    width: 110%;
+    width: 100%;
     padding-bottom: 20px;
     /* background: green; */
   }
@@ -179,12 +180,12 @@ const ContainerTexto = styled.div`
   line-height: 26px;
   font-size: 17px;
   margin-bottom: 6px;
-  width: 36rem;
-  /* background: blue; */
+  width: 50%;
+  /* background: green; */
   font-family: Montserrat;
 
   @media screen and (max-width: 820px) {
-    width: 102%;
+    width: 105%;
     margin-left: 13px;
     /* padding-right: 20px; */
     font-size: 17px;
