@@ -117,14 +117,14 @@ export default function DashboardMenu() {
         </TitleContainer>
         <TitleContainer>
           <Link
-            to="/update-post"
+            to="/change-password"
             style={{
               color: 'white',
               //   marginTop: '-3px',
               textDecoration: 'none',
             }}
           >
-            UPDATE POST
+            MUDAR A SENHA
           </Link>
         </TitleContainer>
         <TitleContainer>

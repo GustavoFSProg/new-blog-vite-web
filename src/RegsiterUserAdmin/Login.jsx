@@ -95,6 +95,9 @@ export default function Login() {
       const { data } = await api.post('/login', dados)
 
       sessionStorage.setItem('token', data.token)
+      sessionStorage.setItem('id_user', data.Id)
+
+      console.log(data)
 
       setUser(true)
 
