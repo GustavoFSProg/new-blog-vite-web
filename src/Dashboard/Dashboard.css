@@ -30,7 +30,7 @@
 @media screen and (max-width: 850px) {
   .container-scroll {
     padding-left: 180px;
-    padding-right: 70px;
+    padding-right: 40px;
     height: 5rem;
     width: 40vw;
   }
