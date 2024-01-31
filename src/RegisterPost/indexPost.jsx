@@ -75,14 +75,14 @@ export default function AreaPosts() {
 
   const navigate = useNavigate()
 
-  function CheckUserLogged() {
-    if (user === true) {
-      navigate('/dashboard')
-    } else {
-      //   navigate('/login')
-      return user
-    }
-  }
+  //   function CheckUserLogged() {
+  //     if (user === true) {
+  //       navigate('/dashboard')
+  //     } else {
+  //       //   navigate('/login')
+  //       return user
+  //     }
+  //   }
 
   async function HandleAuth() {
     const { data } = await api.post('/auth', token)
