@@ -30,11 +30,9 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 24px;
   padding-bottom: 220px;
-  /* background: white; */
 
   @media screen and (max-width: 820px) {
-    background: green;
-    /* width: 28vw; */
+    /* background: green; */
   }
 `
 
