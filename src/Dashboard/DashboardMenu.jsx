@@ -18,7 +18,7 @@ const Blogger = styled.div`
   /* overflow-x: visible; */
 
   @media screen and (max-width: 850px) {
-    /* width: 92vw; */
+    width: 45rem;
   }
 `
 
@@ -30,10 +30,12 @@ const TitleContainer = styled.div`
   /* flex-direction: column; */
   /* background: green; */
   /* margin-left: 10px; */
+  font-weight: bold;
 
   @media screen and (max-width: 850px) {
-    width: 110px;
+    width: 100%;
     text-align: center;
+    font-size: 14px;
   }
 `
 
@@ -48,7 +50,7 @@ export default function DashboardMenu() {
     navigate('/')
   }
   return (
-    <div className="container">
+    <div className="container-scroll">
       <Blogger>
         <TitleContainer>
           {' '}
