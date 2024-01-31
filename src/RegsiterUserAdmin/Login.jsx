@@ -79,8 +79,8 @@ const Botao = styled.button`
 `
 
 export default function Login() {
-  const [email, setEmail] = useState('bbb@gmail.com')
-  const [password, setPassword] = useState('123')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const { user, setUser } = useContext(userContext)
 
