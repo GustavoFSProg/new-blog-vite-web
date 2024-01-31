@@ -78,7 +78,7 @@ const Botao = styled.button`
   }
 `
 
-export default function Login() {
+export default function UserLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -109,17 +109,17 @@ export default function Login() {
     }
   }
 
-  function CheckUserLogged() {
-    if (user === true) {
-      navigate('/dashboard')
-    } else {
-      navigate('/login')
-    }
-  }
+  // function CheckUserLogged() {
+  //   if (user === true) {
+  //     navigate('/dashboard')
+  //   } else {
+  //     navigate('/login')
+  //   }
+  // }
 
-  useEffect(() => {
-    CheckUserLogged()
-  }, [])
+  // useEffect(() => {
+  //   CheckUserLogged()
+  // }, [])
 
   return (
     <div>
