@@ -10,6 +10,8 @@ import Posts from './Posts/Posts'
 import UpdatePost from './UpdatePost/UpdatePost'
 import RegisterUser from './RegsiterUserAdmin/Register'
 import ChangePassword from './RegsiterUserAdmin/ChangePassword'
+import AreaPosts from './RegisterPost/indexPost'
+import IndexAdmin from './RegsiterUserAdmin/indexAdmin'
 
 function Routers() {
   return (
@@ -19,12 +21,12 @@ function Routers() {
           <Route path="/" exact element={<App />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile-admin" element={<ProfileAdmin />} />
-          <Route path="/register" element={<RegisterPost />} />
+          <Route path="/register" element={<AreaPosts />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/update-post" element={<UpdatePost />} />
-          <Route path="/register-user" element={<RegisterUser />} />
+          <Route path="/register-user" element={<IndexAdmin />} />
           <Route path="/change-password" element={<ChangePassword />} />
         </Routes>
       </BrowserRouter>

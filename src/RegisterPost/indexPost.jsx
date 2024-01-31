@@ -4,15 +4,14 @@ import styled from 'styled-components'
 import Navbar from '../components/Navbar/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
-import DashboardMenu from './DashboardMenu'
-import Posts from '../Posts/Posts'
+import RegisterPost from './Register'
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   /* background: #d9d9d9; */
   flex-direction: column;
   font-size: 24px;
@@ -66,7 +65,7 @@ const Botao = styled.button`
   }
 `
 
-export default function Dashboard() {
+export default function AreaPosts() {
   const { user, setUser } = useContext(userContext)
   const [dados, setDados] = useState('')
 
@@ -108,8 +107,8 @@ export default function Dashboard() {
 
         {dados === 'OK' ? (
           <>
-            <DashboardMenu />
-            <h1>DASHBOARD</h1>
+            <RegisterPost />
+            {/* <h1>ÁREA DE POSTS</h1> */}
             {/* <Posts /> */}
           </>
         ) : (

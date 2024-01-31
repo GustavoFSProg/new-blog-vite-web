@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import Navbar from '../components/Navbar/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
-import DashboardMenu from './DashboardMenu'
-import Posts from '../Posts/Posts'
+import RegisterPost from './Register'
+import RegisterUser from './Register'
 
 const Container = styled.div`
   display: flex;
@@ -66,7 +66,7 @@ const Botao = styled.button`
   }
 `
 
-export default function Dashboard() {
+export default function IndexAdmin() {
   const { user, setUser } = useContext(userContext)
   const [dados, setDados] = useState('')
 
@@ -108,8 +108,8 @@ export default function Dashboard() {
 
         {dados === 'OK' ? (
           <>
-            <DashboardMenu />
-            <h1>DASHBOARD</h1>
+            <RegisterUser />
+            {/* <h3>ÁREA DE ADMINS</h3>1 */}
             {/* <Posts /> */}
           </>
         ) : (

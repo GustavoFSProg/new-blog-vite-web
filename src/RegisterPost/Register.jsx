@@ -104,7 +104,6 @@ export default function RegisterPost() {
 
   return (
     <div>
-      <Navbar />
       <Container>
         <DashboardMenu />
 

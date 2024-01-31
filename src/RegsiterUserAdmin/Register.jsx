@@ -124,7 +124,7 @@ export default function RegisterUser() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Container>
         <DashboardMenu />
         <H2>CADASTRO DE USUARIO ADMIN</H2>
