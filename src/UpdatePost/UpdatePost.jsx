@@ -33,8 +33,7 @@ const Container = styled.div`
   background: #cccccc;
 
   @media screen and (max-width: 820px) {
-    background: green;
-    /* width: 28vw; */
+    width: 50vw;
   }
 `
 
