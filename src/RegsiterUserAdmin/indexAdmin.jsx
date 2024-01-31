@@ -97,7 +97,6 @@ export default function IndexAdmin() {
 
   useEffect(() => {
     HandleAuth()
-    CheckUserLogged()
   }, [dados])
 
   return (
