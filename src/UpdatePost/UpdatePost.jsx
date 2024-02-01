@@ -19,22 +19,15 @@ import FormPropsTextFields from '../components/Input'
 import StateTextFields from '../components/InputDois'
 import TextField from '@mui/material/TextField'
 
-let total = ''
-
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: auto;
+  background: #d9d9d9;
   flex-direction: column;
   font-size: 24px;
-  padding-bottom: 220px;
-  background: lightgrey;
-  @media screen and (max-width: 820px) {
-    margin-left: -90px;
-    width: 128%;
-  }
 `
 
 const TextContainer = styled.div`
@@ -286,106 +279,106 @@ export default function UpdatePost() {
     getOnePost()
   }, [])
   return (
-    <div>
+    // <div>
+    <Container>
       <Navbar />
-      <Container>
-        <DashboardMenu />
-        <H1>EDITAR O POST</H1>
+      <DashboardMenu />
+      <H1>EDITAR O POST</H1>
 
-        <br />
-        {buttonopen === true ? (
-          <div
-            style={{
-              display: 'flex',
-              width: '100%',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <SimpleCard />
-          </div>
-        ) : null}
+      <br />
+      {buttonopen === true ? (
+        <div
+          style={{
+            display: 'flex',
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <SimpleCard />
+        </div>
+      ) : null}
 
-        <TotalContainer>
-          <Form
-            style={{
-              display: 'flex',
-              color: '#595959',
-              flexDirection: 'column',
-              // alignItems: 'center',
-              height: '80%',
-            }}
-            onSubmit={updatePosts}
-          >
-            <p>Imagem</p>
-            <input type="file" id="image" onChange={(event) => setImage(event.target.files[0])} />
-            <br />
+      <TotalContainer>
+        <Form
+          style={{
+            display: 'flex',
+            color: '#595959',
+            flexDirection: 'column',
+            // alignItems: 'center',
+            height: '80%',
+          }}
+          onSubmit={updatePosts}
+        >
+          <p>Imagem</p>
+          <input type="file" id="image" onChange={(event) => setImage(event.target.files[0])} />
+          <br />
 
-            <img src={posts.image} width="170" height="140" alt="imagem" />
-            <br />
+          <img src={posts.image} width="170" height="140" alt="imagem" />
+          <br />
 
-            <span>Título</span>
-            <TextContainer>
-              <TextField
-                id="outlined-controlled"
-                // label="Controlled"
-                value={title}
-                onChange={(event) => {
-                  setTitle(event.target.value)
-                }}
-                style={{ width: '100%' }}
-              />
-            </TextContainer>
-            <br />
-            <span>Texto</span>
-            <TextContainer>
-              <TextField
-                id="outlined-controlled"
-                // label="Controlled"
-                value={texto}
-                multiline
-                maxRows={18}
-                style={{ width: '48rem' }}
-                onChange={(event) => {
-                  setTexto(event.target.value)
-                }}
-              />
-            </TextContainer>
-            <br />
-            <span>Autor</span>
-            <TextContainer>
-              <TextField
-                id="outlined-controlled"
-                // label="Controlled"
-                value={autor}
-                onChange={(event) => {
-                  setAutor(event.target.value)
-                }}
-                style={{ width: '100%' }}
-              />
-            </TextContainer>
-            <br />
-            <span>Descrição</span>
-            <TextContainer>
-              <TextField
-                id="outlined-controlled"
-                // label="Controlled"
-                value={description}
-                onChange={(event) => {
-                  setDescription(event.target.value)
-                }}
-                style={{ width: '100%' }}
-              />
-            </TextContainer>
-            <br />
-            <br />
+          <span>Título</span>
+          <TextContainer>
+            <TextField
+              id="outlined-controlled"
+              // label="Controlled"
+              value={title}
+              onChange={(event) => {
+                setTitle(event.target.value)
+              }}
+              style={{ width: '100%' }}
+            />
+          </TextContainer>
+          <br />
+          <span>Texto</span>
+          <TextContainer>
+            <TextField
+              id="outlined-controlled"
+              // label="Controlled"
+              value={texto}
+              multiline
+              maxRows={18}
+              style={{ width: '48rem' }}
+              onChange={(event) => {
+                setTexto(event.target.value)
+              }}
+            />
+          </TextContainer>
+          <br />
+          <span>Autor</span>
+          <TextContainer>
+            <TextField
+              id="outlined-controlled"
+              // label="Controlled"
+              value={autor}
+              onChange={(event) => {
+                setAutor(event.target.value)
+              }}
+              style={{ width: '100%' }}
+            />
+          </TextContainer>
+          <br />
+          <span>Descrição</span>
+          <TextContainer>
+            <TextField
+              id="outlined-controlled"
+              // label="Controlled"
+              value={description}
+              onChange={(event) => {
+                setDescription(event.target.value)
+              }}
+              style={{ width: '100%' }}
+            />
+          </TextContainer>
+          <br />
+          <br />
 
-            <Button style={{ height: '50px' }} type="submit">
-              EDITAR
-            </Button>
-          </Form>
-        </TotalContainer>
-      </Container>
-    </div>
+          <Button style={{ height: '50px' }} type="submit">
+            EDITAR
+          </Button>
+        </Form>
+      </TotalContainer>
+    </Container>
+    // </div>
   )
 }

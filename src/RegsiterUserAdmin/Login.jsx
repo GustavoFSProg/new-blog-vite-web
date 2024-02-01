@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Navbar from '../components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
+import Dashboard from '../Dashboard/Dashboard'
 
 const Container = styled.div`
   display: flex;
@@ -123,8 +124,9 @@ export default function UserLogin() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Container>
+        <Dashboard />
         <br />
         <h1>LOGIN</h1>
 

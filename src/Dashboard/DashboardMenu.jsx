@@ -92,7 +92,7 @@ export default function DashboardMenu() {
         <TitleContainer>
           {' '}
           <Link
-            to="/posts"
+            to="/posts-painel"
             style={{
               color: 'white',
               //   marginTop: '-3px',

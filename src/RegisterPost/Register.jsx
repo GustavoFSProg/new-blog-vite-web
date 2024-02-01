@@ -14,6 +14,7 @@ const Container = styled.div`
   /* background: #d9d9d9; */
   flex-direction: column;
   font-size: 24px;
+  margin-top: -12px;
 `
 
 const Form = styled.form`

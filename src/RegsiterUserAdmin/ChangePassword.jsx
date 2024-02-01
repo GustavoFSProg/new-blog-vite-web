@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Navbar from '../components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
+import DashboardMenu from '../Dashboard/DashboardMenu'
 
 const Container = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const Container = styled.div`
   /* background: #d9d9d9; */
   flex-direction: column;
   font-size: 24px;
+  margin-top: 20px;
 `
 
 const H1 = styled.h1`
@@ -113,22 +115,24 @@ export default function ChangePassword() {
     }
   }
 
-  function CheckUserLogged() {
-    if (user === true) {
-      navigate('/change-password')
-    } else {
-      navigate('/login')
-    }
-  }
+  // function CheckUserLogged() {
+  //   if (user === true) {
+  //     navigate('/change-password')
+  //   } else {
+  //     navigate('/login')
+  //   }
+  // }
 
-  useEffect(() => {
-    CheckUserLogged()
-  }, [])
+  // useEffect(() => {
+  //   CheckUserLogged()
+  // }, [])
 
   return (
     <div>
       <Navbar />
       <Container>
+        <DashboardMenu />
+
         <br />
         <H1>CADASTRAR NOVA SENHA</H1>
 

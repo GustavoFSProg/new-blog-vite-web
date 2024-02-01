@@ -10,6 +10,7 @@ import ChangePassword from './RegsiterUserAdmin/ChangePassword'
 import AreaPosts from './RegisterPost/indexPost'
 import IndexAdmin from './RegsiterUserAdmin/indexAdmin'
 import UserLogin from './RegsiterUserAdmin/Login'
+import PostsPainel from './Posts/PostsPainel'
 
 function Routers() {
   return (
@@ -26,6 +27,7 @@ function Routers() {
           <Route path="/update-post" element={<UpdatePost />} />
           <Route path="/register-user" element={<IndexAdmin />} />
           <Route path="/change-password" element={<ChangePassword />} />
+          <Route path="/posts-painel" element={<PostsPainel />} />
         </Routes>
       </BrowserRouter>
     </UserContextProvider>

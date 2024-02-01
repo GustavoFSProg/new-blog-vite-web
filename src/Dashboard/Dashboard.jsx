@@ -16,6 +16,7 @@ const Container = styled.div`
   /* background: #d9d9d9; */
   flex-direction: column;
   font-size: 24px;
+  margin-top: -18px;
 `
 
 const H1 = styled.h1`
@@ -115,6 +116,7 @@ export default function Dashboard() {
         {dados === 'OK' ? (
           <>
             <DashboardMenu />
+            <Posts />
             <h1>DASHBOARD</h1>
             {/* <Posts /> */}
           </>

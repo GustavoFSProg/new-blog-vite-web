@@ -15,6 +15,7 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 24px;
   margin-bottom: 200px;
+  margin-top: 20px;
 `
 
 const H1 = styled.h1`
@@ -72,7 +73,7 @@ const ContainerPosts = styled.div`
   }
 `
 
-export default function Posts() {
+export default function PostsPainel() {
   const [posts, setPosts] = useState([])
 
   const navigate = useNavigate()
@@ -105,10 +106,10 @@ export default function Posts() {
 
   return (
     <div>
-      {/* <Navbar /> */}
-      {/* <DashboardMenu /> */}
-
+      <Navbar />
       <Container>
+        <DashboardMenu />
+
         <H1>LISTA DE POSTS</H1>
 
         <br />

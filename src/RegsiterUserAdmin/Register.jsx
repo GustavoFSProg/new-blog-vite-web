@@ -16,6 +16,11 @@ const Container = styled.div`
   /* background: #d9d9d9; */
   flex-direction: column;
   font-size: 24px;
+  margin-top: -190px;
+
+  @media screen and (max-width: 820px) {
+    margin-top: -174px;
+  }
 `
 
 const FormContainerName = styled.div`
@@ -67,7 +72,7 @@ const Botao = styled.button`
 
   @media screen and (max-width: 820px) {
     width: 80%;
-    margin-left: -10px;
+    margin-left: 6px;
   }
 `
 
@@ -76,6 +81,7 @@ const H2 = styled.h2`
 
   @media screen and (max-width: 820px) {
     font-size: 19px;
+    margin-top: 34px;
   }
 `
 
