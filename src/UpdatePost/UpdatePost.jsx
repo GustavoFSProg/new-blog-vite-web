@@ -284,7 +284,7 @@ export default function UpdatePost() {
     <Container>
       <Navbar />
       <DashboardMenu />
-      <H1>EDITAR O POST</H1>
+      <H1>EDITAR O POST-PUBLICO</H1>
 
       <br />
       {buttonopen === true ? (
