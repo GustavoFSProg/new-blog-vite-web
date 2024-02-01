@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
 import Dashboard from '../Dashboard/Dashboard'
+import DashboardMenu from '../Dashboard/DashboardMenu'
 
 const Container = styled.div`
   display: flex;
@@ -15,6 +16,7 @@ const Container = styled.div`
   /* background: #d9d9d9; */
   flex-direction: column;
   font-size: 24px;
+  margin-top: 20px;
 `
 
 const Form = styled.form`
@@ -124,9 +126,9 @@ export default function UserLogin() {
 
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Container>
-        <Dashboard />
+        <DashboardMenu />
         <br />
         <h1>LOGIN</h1>
 

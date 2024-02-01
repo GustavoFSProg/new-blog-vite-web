@@ -131,10 +131,9 @@ export default function Dashboard() {
             <h3>Efetue o login para Entrar</h3>
 
             <br />
-            {/* <Link to="/login" style={{ color: 'white', fontSize: '30px' }}>
+            <Link to="/login" style={{ color: 'white', fontSize: '30px' }}>
               LOGIN
-            </Link> */}
-            <UserLogin />
+            </Link>
           </>
         )}
 
