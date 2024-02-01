@@ -45,21 +45,6 @@ const Form = styled.form`
   }
 `
 
-// const Form = styled.form`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 40%;
-//   /* height: 200px; */
-//   /* background: green; */
-//   flex-direction: column;
-//   font-size: 24px;
-
-//   @media screen and (max-width: 820px) {
-//     width: 100vw;
-//   }
-// `
-
 const Botao = styled.button`
   display: flex;
   justify-content: center;
@@ -71,10 +56,7 @@ const Botao = styled.button`
   color: white;
   padding-top: 10px;
   padding-bottom: 10px;
-  /* padding-left: 10px; */
-  /* padding-right: 10px; */
   border-radius: 10px;
-  /* margin-right: 20px; */
   transition: all ease 0.8s;
   margin-top: 37px;
 
@@ -84,8 +66,8 @@ const Botao = styled.button`
   }
 
   @media screen and (max-width: 820px) {
-    width: 84%;
-    /* width: 100%; */
+    width: 80%;
+    margin-left: -10px;
   }
 `
 

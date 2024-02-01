@@ -27,6 +27,19 @@ const Form = styled.form`
   font-size: 24px;
 `
 
+const TextArea = styled.textarea`
+  border-radius: 11px;
+
+  padding-top: 12px;
+  padding-left: 12px;
+  padding-bottom: 9px;
+  margin-bottom: -39px;
+
+  @media screen and (max-width: 820px) {
+    width: 80%;
+  }
+`
+
 const Input = styled.input`
   display: flex;
   justify-content: center;
@@ -40,6 +53,10 @@ const Input = styled.input`
   padding-bottom: 9px;
   border-radius: 10px;
   margin-bottom: -10px;
+
+  @media screen and (max-width: 820px) {
+    width: 80%;
+  }
 `
 
 const Botao = styled.button`
@@ -62,6 +79,10 @@ const Botao = styled.button`
   &:hover {
     background: #31633e;
     color: yellow;
+  }
+
+  @media screen and (max-width: 820px) {
+    width: 85%;
   }
 `
 
@@ -123,20 +144,12 @@ export default function RegisterPost() {
             onChange={(e) => setTitle(e.target.value)}
           />
           <br />
-          <textarea
+          <TextArea
             placeholder="Texto"
             rows="22"
             cols="58"
             id="text"
             value={texto}
-            style={{
-              borderRadius: '11px',
-
-              paddingTop: '12px',
-              paddingLeft: '12px',
-              paddingBottom: '9px',
-              marginBottom: '-39px',
-            }}
             onChange={(e) => setTexto(e.target.value)}
           />
           <br />

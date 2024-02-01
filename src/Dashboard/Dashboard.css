@@ -6,7 +6,7 @@
   width: 100vw;
   height: auto;
   font-size: 24px;
-  background: gray;
+  background: #404040;
   /* padding-left: 30px; */
   padding-top: 15px;
   padding-bottom: 15px;
@@ -27,11 +27,29 @@
   background: #5a5664;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 720px) {
   .container-scroll {
     padding-left: 180px;
     padding-right: 40px;
     height: 5rem;
-    width: 40vw;
+    width: 44%;
+  }
+}
+
+@media screen and (min-width: 721px) and (max-width: 850px) {
+  .container-scroll {
+    padding-left: 180px;
+    padding-right: 40px;
+    height: 5rem;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 950px) {
+  .container-scroll {
+    padding-left: 180px;
+    padding-right: 40px;
+    height: 5rem;
+    width: 80%;
   }
 }

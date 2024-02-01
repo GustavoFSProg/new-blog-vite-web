@@ -18,7 +18,7 @@ const Blogger = styled.div`
   /* overflow-x: visible; */
 
   @media screen and (max-width: 850px) {
-    width: 45rem;
+    width: 50rem;
   }
 `
 
@@ -27,9 +27,6 @@ const TitleContainer = styled.div`
   width: 200px;
   justify-content: center;
   align-items: center;
-  /* flex-direction: column; */
-  /* background: green; */
-  /* margin-left: 10px; */
   font-weight: bold;
 
   @media screen and (max-width: 850px) {
@@ -65,18 +62,6 @@ export default function DashboardMenu() {
             PAINEL
           </Link>
         </TitleContainer>
-        {/* <TitleContainer>
-          <Link
-            to="/register"
-            style={{
-              color: 'white',
-              //   marginTop: '-3px',
-              textDecoration: 'none',
-            }}
-          >
-            TESTES
-          </Link>
-        </TitleContainer> */}
 
         <TitleContainer>
           <Link
