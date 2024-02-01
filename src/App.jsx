@@ -14,7 +14,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 98vw;
   height: auto;
   /* background: #d9d9d9; */
   flex-direction: column;
@@ -110,8 +110,8 @@ export default function App() {
 
   return (
     <div>
-      <Navbar />
       <Container>
+        <Navbar />
         <br />
 
         <Grid>

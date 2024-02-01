@@ -50,7 +50,6 @@ export default function DashboardMenu() {
     <div className="container-scroll">
       <Blogger>
         <TitleContainer>
-          {' '}
           <Link
             to="/dashboard"
             style={{
