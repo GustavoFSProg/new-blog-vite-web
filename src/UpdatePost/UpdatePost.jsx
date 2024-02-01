@@ -378,6 +378,9 @@ export default function UpdatePost() {
             EDITAR
           </Button>
         </Form>
+        <br />
+        <br />
+        <br />
       </TotalContainer>
     </Container>
     // </div>
