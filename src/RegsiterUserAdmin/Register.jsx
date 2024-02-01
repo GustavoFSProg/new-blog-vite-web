@@ -19,7 +19,7 @@ const Container = styled.div`
   margin-top: -190px;
 
   @media screen and (max-width: 820px) {
-    margin-top: -174px;
+    margin-top: -54px;
   }
 `
 
