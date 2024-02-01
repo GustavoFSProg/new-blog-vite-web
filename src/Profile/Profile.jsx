@@ -59,20 +59,6 @@ const TotalContainer = styled.div`
   }
 `
 
-const LikesViewsContainer = styled.div`
-  display: flex;
-  /* justify-content: center;
-  align-items: center; */
-  width: 70%;
-  /* height: auto; */
-  /* flex-direction: column; */
-
-  @media screen and (max-width: 820px) {
-    /* flex-direction: row; */
-    /* padding-bottom: 60px; */
-  }
-`
-
 const AutorDateContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -231,6 +217,7 @@ const useStyles = makeStyles({
 export default function Profile() {
   const [posts, setPosts] = useState({})
   const [buttonopen, setButtonOpen] = useState(false)
+  const [likeopen, setLikeOpen] = useState(false)
 
   const navigate = useNavigate()
 
@@ -270,6 +257,8 @@ export default function Profile() {
   async function handleLikes(id) {
     try {
       await api.put(`/update-likes/${id}`)
+
+      setLikeOpen(true)
 
       // location.reload()
 
@@ -362,17 +351,28 @@ export default function Profile() {
           <Imagem src={posts.image} alt="imagem" />
           <ContainerTexto>{posts.texto}</ContainerTexto>
           <DateLikesAllContainer>
-            <LikesContainer onClick={() => handleLikes(posts.id)}>
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginLeft: '8px',
-                }}
-              >
-                <AiTwotoneLike style={{ color: 'blue', marginRight: '3px' }} fontSize="30px" />
-                {posts.likes}
-              </div>
+            <LikesContainer>
+              {likeopen === true ? (
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginLeft: '8px',
+                  }}
+                >
+                  <button style={{ background: 'none', border: 'none' }} disabled>
+                    <AiTwotoneLike style={{ color: 'gray', marginRight: '3px' }} fontSize="30px" />
+                  </button>
+                </div>
+              ) : (
+                <button
+                  style={{ background: 'none', border: 'none' }}
+                  onClick={() => handleLikes(posts.id)}
+                >
+                  <AiTwotoneLike style={{ color: 'blue', marginRight: '3px' }} fontSize="30px" />
+                </button>
+              )}
+              {posts.likes}
               <ViewsContainer>
                 Views: <p style={{ marginLeft: '5px' }}>{posts.views}</p>
               </ViewsContainer>
