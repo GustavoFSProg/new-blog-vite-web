@@ -30,10 +30,19 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 24px;
   padding-bottom: 220px;
-  background: #cccccc;
+  background: lightgrey;
+  @media screen and (max-width: 820px) {
+    margin-left: -90px;
+    width: 128%;
+  }
+`
+
+const TextContainer = styled.div`
+  display: flex;
+  width: 100%;
 
   @media screen and (max-width: 820px) {
-    width: 50vw;
+    width: 150%;
   }
 `
 
@@ -48,6 +57,7 @@ const TotalContainer = styled.div`
 
   @media screen and (max-width: 820px) {
     flex-direction: column;
+    width: 50vw;
   }
 `
 
@@ -91,7 +101,7 @@ const Button = styled.button`
 
   @media screen and (max-width: 820px) {
     display: flex;
-    width: 98%;
+    width: 145%;
     justify-content: center;
     align-items: center;
     margin-right: 10px;
@@ -99,6 +109,16 @@ const Button = styled.button`
     margin-bottom: 14px;
 
     height: 45px;
+  }
+`
+
+const Form = styled.form`
+  display: flex;
+  color: #595959;
+  flex-direction: column;
+
+  @media screen and (max-width: 820px) {
+    width: 50vw;
   }
 `
 
@@ -277,7 +297,7 @@ export default function UpdatePost() {
         ) : null}
 
         <TotalContainer>
-          <form
+          <Form
             style={{
               display: 'flex',
               color: '#595959',
@@ -295,54 +315,65 @@ export default function UpdatePost() {
             <br />
 
             <span>Título</span>
-            <TextField
-              id="outlined-controlled"
-              // label="Controlled"
-              value={title}
-              onChange={(event) => {
-                setTitle(event.target.value)
-              }}
-            />
+            <TextContainer>
+              <TextField
+                id="outlined-controlled"
+                // label="Controlled"
+                value={title}
+                onChange={(event) => {
+                  setTitle(event.target.value)
+                }}
+                style={{ width: '100%' }}
+              />
+            </TextContainer>
             <br />
             <span>Texto</span>
-            <TextField
-              id="outlined-controlled"
-              // label="Controlled"
-              value={texto}
-              multiline
-              maxRows={18}
-              style={{ width: '48rem' }}
-              onChange={(event) => {
-                setTexto(event.target.value)
-              }}
-            />
+            <TextContainer>
+              <TextField
+                id="outlined-controlled"
+                // label="Controlled"
+                value={texto}
+                multiline
+                maxRows={18}
+                style={{ width: '48rem' }}
+                onChange={(event) => {
+                  setTexto(event.target.value)
+                }}
+              />
+            </TextContainer>
             <br />
             <span>Autor</span>
-            <TextField
-              id="outlined-controlled"
-              // label="Controlled"
-              value={autor}
-              onChange={(event) => {
-                setAutor(event.target.value)
-              }}
-            />
+            <TextContainer>
+              <TextField
+                id="outlined-controlled"
+                // label="Controlled"
+                value={autor}
+                onChange={(event) => {
+                  setAutor(event.target.value)
+                }}
+                style={{ width: '100%' }}
+              />
+            </TextContainer>
             <br />
             <span>Descrição</span>
-            <TextField
-              id="outlined-controlled"
-              // label="Controlled"
-              value={description}
-              onChange={(event) => {
-                setDescription(event.target.value)
-              }}
-            />
+            <TextContainer>
+              <TextField
+                id="outlined-controlled"
+                // label="Controlled"
+                value={description}
+                onChange={(event) => {
+                  setDescription(event.target.value)
+                }}
+                style={{ width: '100%' }}
+              />
+            </TextContainer>
             <br />
             <br />
 
             <Button style={{ height: '50px' }} type="submit">
               EDITAR
             </Button>
-          </form>
+          </Form>
         </TotalContainer>
       </Container>
     </div>

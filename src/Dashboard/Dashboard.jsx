@@ -18,13 +18,20 @@ const Container = styled.div`
   font-size: 24px;
 `
 
+const H1 = styled.h1`
+  display: flex;
+
+  @media screen and (max-width: 820px) {
+    font-size: 22px;
+  }
+`
+
 const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: auto;
-  /* background: green; */
   flex-direction: column;
   font-size: 24px;
 `
@@ -35,7 +42,6 @@ const Input = styled.input`
   align-items: center;
   width: 30rem;
   height: auto;
-  /* background: #d9d9d9; */
   font-size: 17px;
   padding-top: 9px;
   padding-left: 11px;
@@ -114,10 +120,10 @@ export default function Dashboard() {
           </>
         ) : (
           <>
-            <h1>
+            <H1>
               ACESSO PROIBIDO!
               <br />
-            </h1>
+            </H1>
             <h3>Efetue o login para Entrar</h3>
 
             <br />
