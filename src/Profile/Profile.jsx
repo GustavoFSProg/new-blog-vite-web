@@ -318,7 +318,7 @@ export default function Profile() {
 
   useEffect(() => {
     getOnePost()
-  }, [])
+  }, [posts])
 
   return (
     <>
