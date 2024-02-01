@@ -112,6 +112,15 @@ const Button = styled.button`
   }
 `
 
+const H1 = styled.h1`
+  display: flex;
+  color: #4d4d4d;
+
+  @media screen and (max-width: 820px) {
+    font-size: 23px;
+  }
+`
+
 const Form = styled.form`
   display: flex;
   color: #595959;
@@ -281,6 +290,8 @@ export default function UpdatePost() {
       <Navbar />
       <Container>
         <DashboardMenu />
+        <H1>EDITAR O POST</H1>
+
         <br />
         {buttonopen === true ? (
           <div

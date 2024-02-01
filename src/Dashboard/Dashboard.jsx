@@ -22,7 +22,7 @@ const H1 = styled.h1`
   display: flex;
 
   @media screen and (max-width: 820px) {
-    font-size: 22px;
+    font-size: 23px;
   }
 `
 

@@ -16,6 +16,14 @@ const Container = styled.div`
   font-size: 24px;
 `
 
+const H1 = styled.h1`
+  display: flex;
+
+  @media screen and (max-width: 820px) {
+    font-size: 23px;
+  }
+`
+
 const Form = styled.form`
   display: flex;
   justify-content: center;
@@ -122,7 +130,7 @@ export default function ChangePassword() {
       <Navbar />
       <Container>
         <br />
-        <h1>CADASTRAR NOVA SENHA</h1>
+        <H1>CADASTRAR NOVA SENHA</H1>
 
         <br />
 
