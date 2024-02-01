@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
 import DashboardMenu from './DashboardMenu'
 import Posts from '../Posts/Posts'
+import UserLogin from '../RegsiterUserAdmin/Login'
 
 const Container = styled.div`
   display: flex;
@@ -130,9 +131,10 @@ export default function Dashboard() {
             <h3>Efetue o login para Entrar</h3>
 
             <br />
-            <Link to="/login" style={{ color: 'white', fontSize: '30px' }}>
+            {/* <Link to="/login" style={{ color: 'white', fontSize: '30px' }}>
               LOGIN
-            </Link>
+            </Link> */}
+            <UserLogin />
           </>
         )}
 
