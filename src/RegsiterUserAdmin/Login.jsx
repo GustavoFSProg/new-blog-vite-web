@@ -128,7 +128,6 @@ export default function UserLogin() {
     <div>
       <Navbar />
       <Container>
-        <DashboardMenu />
         <br />
         <h1>LOGIN</h1>
 
