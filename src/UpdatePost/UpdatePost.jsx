@@ -276,11 +276,10 @@ export default function UpdatePost() {
   useEffect(() => {
     getOnePost()
   }, [])
-
   return (
     <div>
+      <Navbar />
       <Container>
-        <Navbar />
         <DashboardMenu />
         <br />
         {buttonopen === true ? (

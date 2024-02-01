@@ -27,7 +27,7 @@
   background: #5a5664;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 420px) {
   .container-scroll {
     padding-left: 180px;
     padding-right: 40px;
@@ -36,12 +36,12 @@
   }
 }
 
-@media screen and (min-width: 721px) and (max-width: 850px) {
+@media screen and (min-width: 421px) and (max-width: 850px) {
   .container-scroll {
     padding-left: 180px;
     padding-right: 40px;
     height: 5rem;
-    width: 90%;
+    width: 80%;
   }
 }
 
