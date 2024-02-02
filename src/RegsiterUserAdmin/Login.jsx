@@ -101,12 +101,16 @@ export default function UserLogin() {
       sessionStorage.setItem('id_user', data.Id)
 
       console.log(data.token)
+      console.log(data.msg)
 
-      setUser(true)
+      if (data.msgError) {
+        return alert(data.msgError)
+      } else {
+        setUser(true)
 
-      navigate('/dashboard')
-
-      alert('Login whit Sucesso!')
+        navigate('/dashboard')
+      }
+      return alert(data.msg)
     } catch (error) {
       return alert(error)
     }
