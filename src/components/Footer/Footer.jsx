@@ -10,7 +10,7 @@ const Container = styled.div`
   background: black;
   padding-top: 15px;
   padding-bottom: 25px;
-  color: #8c8c8c;
+  color: #808080;
 
   @media screen and (max-width: 850px) {
     width: 100%;
