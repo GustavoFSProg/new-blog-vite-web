@@ -59,7 +59,7 @@ export default function Footer() {
             marginTop: '6px',
           }}
         >
-          27/01/2024
+          04/02/2024
         </span>
       </TitleContainer>
     </Container>
