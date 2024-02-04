@@ -124,6 +124,8 @@ export default function RegisterPost() {
     }
   }
 
+  console.log(image.name)
+
   return (
     <div>
       <Container>
@@ -134,6 +136,7 @@ export default function RegisterPost() {
         <Form onSubmit={registerPost}>
           IMAGEM:
           <Input type="file" id="image" onChange={(e) => setImage(e.target.files[0])} />
+          {/* <img src={} /> */}
           <br />
           <br />
           <Input
