@@ -12,6 +12,7 @@ import CardContent from '@material-ui/core/CardContent'
 import BButton from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { useNavigate } from 'react-router-dom'
+import Footer from '../components/Footer/Footer'
 
 const Container = styled.div`
   display: flex;
@@ -394,6 +395,7 @@ export default function Profile() {
           <br />
         </TotalContainer>
       </Container>
+      <Footer />
     </>
   )
 }

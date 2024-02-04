@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
 import DashboardMenu from '../Dashboard/DashboardMenu'
+import Footer from '../components/Footer/Footer'
 
 const Container = styled.div`
   display: flex;
@@ -158,6 +159,7 @@ export default function ChangePassword() {
         <br />
         <br />
       </Container>
+      <Footer />
     </div>
   )
 }

@@ -139,6 +139,7 @@ export default function Dashboard() {
 
         <br />
       </Container>
+      <Footer />
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { userContext } from '../userContext'
 import Dashboard from '../Dashboard/Dashboard'
 import DashboardMenu from '../Dashboard/DashboardMenu'
+import Footer from '../components/Footer/Footer'
 
 const Container = styled.div`
   display: flex;
@@ -165,6 +166,12 @@ export default function UserLogin() {
         <br />
         <br />
       </Container>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
     </div>
   )
 }

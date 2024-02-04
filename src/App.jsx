@@ -4,6 +4,7 @@ import styled from 'styled-components'
 // import { Drawer } from '@mui/material'
 import Navbar from './components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
+import Footer from './components/Footer/Footer'
 
 // const mainFontFamily = Fira_Code({
 //   weight: ["400"],
@@ -128,6 +129,7 @@ export default function App() {
           })}
         </Grid>
       </Container>
+      <Footer />
     </div>
   )
 }
