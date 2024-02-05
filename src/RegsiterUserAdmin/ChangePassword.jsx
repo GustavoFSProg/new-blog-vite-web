@@ -103,16 +103,19 @@ export default function ChangePassword() {
     console.log(id)
 
     try {
-      const data = await api.put(`/change-password/${id}`, { password: password })
+      if (password === '') {
+        return alert(' Degite a nova senha!')
+      } else {
+        const data = await api.put(`/change-password/${id}`, { password: password })
 
-      setUser(true)
-      console.log(data)
+        setUser(true)
+        console.log(data)
 
-      // navigate('/dashboard')
-
-      alert('Senha atualizada com sucesso!')
+        return alert('Senha alterada com sucesso!')
+      }
+      // return alert('Senha atualizada com sucesso!')
     } catch (error) {
-      return alert(error)
+      return alert('ERRO: degite a nova senha!')
     }
   }
 

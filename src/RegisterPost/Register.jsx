@@ -113,14 +113,16 @@ export default function RegisterPost() {
       data.append('likes', likes)
       data.append('views', views)
 
-      await api.post('/register', data)
+      if (data === '') {
+        return alert('ERRO: Prencha todos os campos!')
+      } else {
+        await api.post('/register', data)
 
-      alert('Sucesso!')
-
-      navigate('/')
-      return
+        navigate('/')
+        return alert('Sucesso!')
+      }
     } catch (error) {
-      return alert(error)
+      return alert('ERRO: Preencha todos os campos!!')
     }
   }
 

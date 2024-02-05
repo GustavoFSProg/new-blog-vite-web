@@ -99,14 +99,18 @@ export default function RegisterUser() {
     try {
       const data = { name, email, password }
 
-      await api.post('/register-admin', data)
+      if (data === '') {
+        return alert('ERRO: Prencha todos os campos!')
+      } else {
+        await api.post('/register-admin', data)
 
-      alert('Sucesso!')
+        alert('Sucesso!')
 
-      navigate('/')
-      return
+        navigate('/')
+        return alert('ERRO: Preencha todos campos!')
+      }
     } catch (error) {
-      return alert(error)
+      return alert('ERRO: Preencha todos os Campos listados!')
     }
   }
 
