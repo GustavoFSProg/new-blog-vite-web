@@ -15,12 +15,13 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 98vw;
+  width: 100vw;
   height: auto;
   /* background: #d9d9d9; */
   flex-direction: column;
   font-size: 24px;
   margin-bottom: 200px;
+  overflow: hidden;
 `
 
 const H1 = styled.h1`
