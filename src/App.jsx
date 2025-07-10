@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
-import api from './api'
-import styled from 'styled-components'
+import { useEffect, useState } from "react";
+import api from "./api";
+import styled from "styled-components";
 // import { Drawer } from '@mui/material'
-import Navbar from './components/Navbar/Navbar'
-import { useNavigate } from 'react-router-dom'
-import Footer from './components/Footer/Footer'
+import Navbar from "./components/Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
 
 // const mainFontFamily = Fira_Code({
 //   weight: ["400"],
@@ -22,7 +22,7 @@ const Container = styled.div`
   font-size: 24px;
   margin-bottom: 200px;
   overflow: hidden;
-`
+`;
 
 const H1 = styled.h1`
   display: flex;
@@ -35,7 +35,7 @@ const H1 = styled.h1`
     display: flex;
     flex-direction: column;
   }
-`
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -62,7 +62,7 @@ const Grid = styled.div`
     justify-content: center;
     align-items: center;
   }
-`
+`;
 
 const ContainerPosts = styled.div`
   height: auto;
@@ -77,38 +77,38 @@ const ContainerPosts = styled.div`
   @media screen and (max-width: 800px) {
     width: 100vw;
   }
-`
+`;
 
 export default function App() {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   async function getAllPosts() {
     try {
-      const { data } = await api.get('/get-all-posts')
+      const { data } = await api.get("/get-all-posts");
 
-      setPosts(data)
+      setPosts(data);
     } catch (error) {
-      return alert(error)
+      return alert(error);
     }
   }
 
   async function setPostId(id) {
     try {
-      sessionStorage.setItem('POST-ID', id)
+      sessionStorage.setItem("POST-ID", id);
 
-      await api.put(`/update-views/${id}`)
+      await api.put(`/update-views/${id}`);
 
-      navigate('/profile')
+      navigate("/profile");
     } catch (error) {
-      return alert(error)
+      return alert(error);
     }
   }
 
   useEffect(() => {
-    getAllPosts()
-  }, [])
+    getAllPosts();
+  }, []);
 
   return (
     <div>
@@ -121,16 +121,18 @@ export default function App() {
             return (
               <ContainerPosts key="" onClick={() => setPostId(items.id)}>
                 <p>
-                  <span style={{ fontSize: '25px' }}>{items.title}</span>
+                  <span style={{ fontSize: "25px" }}>{items.title}</span>
                 </p>
                 <img src={items.image} width="300" height="200" alt="imagem" />
-                <p> {items.description}</p>
+                <p style={{ width: "72%", marginLeft: "10px" }}>
+                  {items.description}
+                </p>
               </ContainerPosts>
-            )
+            );
           })}
         </Grid>
       </Container>
       <Footer />
     </div>
-  )
+  );
 }

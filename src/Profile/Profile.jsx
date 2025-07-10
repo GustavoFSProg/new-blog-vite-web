@@ -32,8 +32,8 @@ const Container = styled.div`
 `;
 
 const Imagem = styled.img`
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   /* height: 340px; */
   margin-bottom: 5px;
   /* background: yellow; */
