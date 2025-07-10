@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import Drawer from '../drawer'
+import styled from "styled-components";
+import Drawer from "../drawer";
 
 const Container = styled.div`
   display: flex;
@@ -11,11 +11,13 @@ const Container = styled.div`
   padding-top: 15px;
   padding-bottom: 25px;
   color: #808080;
+  position: absolute;
+  bottom: 0;
 
   @media screen and (max-width: 850px) {
     width: 100%;
   }
-`
+`;
 
 const TitleContainer = styled.div`
   display: flex;
@@ -32,7 +34,7 @@ const TitleContainer = styled.div`
     /* width: 100%; */
     /* margin-left: -10px; */
   }
-`
+`;
 
 const Span = styled.div`
   display: flex;
@@ -45,7 +47,7 @@ const Span = styled.div`
   @media screen and (max-width: 850px) {
     font-size: 13px;
   }
-`
+`;
 
 export default function Footer() {
   return (
@@ -54,14 +56,14 @@ export default function Footer() {
         <Span>gustavo.prog40@gmail.com</Span>
         <span
           style={{
-            fontSize: '13px',
-            fontStyle: 'italic',
-            marginTop: '6px',
+            fontSize: "13px",
+            fontStyle: "italic",
+            marginTop: "6px",
           }}
         >
           04/02/2024
         </span>
       </TitleContainer>
     </Container>
-  )
+  );
 }
