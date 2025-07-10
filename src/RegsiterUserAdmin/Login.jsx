@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from 'react'
-import api from '../api'
-import styled from 'styled-components'
-import Navbar from '../components/Navbar/Navbar'
-import { useNavigate } from 'react-router-dom'
-import { userContext } from '../userContext'
-import Dashboard from '../Dashboard/Dashboard'
-import DashboardMenu from '../Dashboard/DashboardMenu'
-import Footer from '../components/Footer/Footer'
+import { useContext, useEffect, useState } from "react";
+import api from "../api";
+import styled from "styled-components";
+import Navbar from "../components/Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
+import { userContext } from "../userContext";
+import Dashboard from "../Dashboard/Dashboard";
+import DashboardMenu from "../Dashboard/DashboardMenu";
+import Footer from "../components/Footer/Footer";
 
 const Container = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 24px;
   margin-top: 20px;
-`
+`;
 
 const Form = styled.form`
   display: flex;
@@ -33,7 +33,7 @@ const Form = styled.form`
   @media screen and (max-width: 820px) {
     width: 100vw;
   }
-`
+`;
 
 const Input = styled.input`
   display: flex;
@@ -53,7 +53,7 @@ const Input = styled.input`
     width: 80%;
     margin-top: -9px;
   }
-`
+`;
 
 const Botao = styled.button`
   display: flex;
@@ -80,40 +80,40 @@ const Botao = styled.button`
   @media screen and (max-width: 820px) {
     width: 84%;
   }
-`
+`;
 
 export default function UserLogin() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const { user, setUser } = useContext(userContext)
+  const { user, setUser } = useContext(userContext);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   async function handleLogin(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
-      const dados = { email, password }
+      const dados = { email, password };
 
-      const { data } = await api.post('/login', dados)
+      const { data } = await api.post("/login", dados);
 
-      sessionStorage.setItem('token', data.token)
-      sessionStorage.setItem('id_user', data.Id)
+      sessionStorage.setItem("token", data.token);
+      sessionStorage.setItem("id_user", data.Id);
 
-      console.log(data.token)
-      console.log(data.msg)
+      console.log(data.token);
+      console.log(data.msg);
 
       if (data.msgError) {
-        return alert(data.msgError)
+        return alert(data.msgError);
       } else {
-        setUser(true)
+        setUser(true);
 
-        navigate('/dashboard')
+        navigate("/dashboard");
       }
-      return alert(data.msg)
+      return alert(data.msg);
     } catch (error) {
-      return alert(error)
+      return alert(error);
     }
   }
 
@@ -173,5 +173,5 @@ export default function UserLogin() {
       <br />
       <Footer />
     </div>
-  )
+  );
 }
