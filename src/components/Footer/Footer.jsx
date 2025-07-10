@@ -53,7 +53,7 @@ export default function Footer() {
   return (
     <Container>
       <TitleContainer>
-        <Span>gustavo.prog40@gmail.com</Span>
+        <Span>gustavosohne38@gmail.com</Span>
         <span
           style={{
             fontSize: "13px",
